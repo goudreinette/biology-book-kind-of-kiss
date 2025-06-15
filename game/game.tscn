@@ -1,10 +1,11 @@
-[gd_scene load_steps=27 format=3 uid="uid://dtjn8j1wteo3m"]
+[gd_scene load_steps=28 format=3 uid="uid://dtjn8j1wteo3m"]
 
 [ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://game/move_forward.gd" id="1_dxwpq"]
 [ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://game/game.gd" id="1_mhvfb"]
 [ext_resource type="PackedScene" uid="uid://cy4w7dt4rfruv" path="res://models/dna/source/DNA.fbx" id="3_u8s88"]
 [ext_resource type="PackedScene" uid="uid://csbyy30jmmsn7" path="res://models/ships/minimal.blend" id="4_5e03w"]
 [ext_resource type="PackedScene" uid="uid://cua81oum7yijw" path="res://models/chromosome-x/chromosome_x.tscn" id="4_dxwpq"]
+[ext_resource type="Environment" uid="uid://5ggkd7q5fh6x" path="res://environments/world_environment.tres" id="4_mhvfb"]
 [ext_resource type="PackedScene" uid="uid://cjfjpdvfvhluc" path="res://models/glucosemolecule/source/GlucoseMolecule.fbx" id="5_mhvfb"]
 [ext_resource type="PackedScene" uid="uid://dvqqvfv4t3hto" path="res://models/stylizeddigestivesystem.blend" id="6_5e03w"]
 [ext_resource type="PackedScene" uid="uid://dur68w0ks2svm" path="res://models/red blood cells/red blood cell.blend" id="6_mhvfb"]
@@ -90,6 +91,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 168.50383)
 script = ExtResource("1_dxwpq")
 
 [node name="Camera3D" type="Camera3D" parent="LevelPosition"]
+environment = ExtResource("4_mhvfb")
 
 [node name="Ship" parent="LevelPosition" instance=ExtResource("4_5e03w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7245426, -19.024673)

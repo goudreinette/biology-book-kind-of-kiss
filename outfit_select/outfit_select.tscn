@@ -1,96 +1,171 @@
-[gd_scene load_steps=8 format=3 uid="uid://cpinfibylp4rb"]
+[gd_scene load_steps=24 format=3 uid="uid://cpinfibylp4rb"]
 
+[ext_resource type="Environment" uid="uid://5ggkd7q5fh6x" path="res://environments/world_environment.tres" id="1_4fj4n"]
 [ext_resource type="PackedScene" uid="uid://dfpocqlko5n00" path="res://models/text/select character.tscn" id="1_srhf4"]
 [ext_resource type="Script" uid="uid://dglo1cu2xjpl1" path="res://outfit_select/outfit_select.gd" id="1_upre0"]
-[ext_resource type="PackedScene" uid="uid://fc1tmdovnpo8" path="res://models/outfits/hugo/hugo.blend" id="2_4fj4n"]
+[ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/vein_straight.tscn" id="2_48j00"]
+[ext_resource type="PackedScene" uid="uid://cukg1r7lls58j" path="res://models/outfits/outfit1/outfit1.blend" id="3_k6hjx"]
+[ext_resource type="PackedScene" uid="uid://dur68w0ks2svm" path="res://models/red blood cells/red blood cell.blend" id="3_lu2ng"]
 [ext_resource type="Script" uid="uid://bkorkqo38v2p0" path="res://models/outfits/outfit.gd" id="4_6s8jx"]
+[ext_resource type="PackedScene" uid="uid://blg8suql48juf" path="res://models/outfits/outfit2/outfit2.blend" id="5_obksr"]
+[ext_resource type="PackedScene" uid="uid://ck32avt6vo1mr" path="res://models/text/biologybookkindofkiss.tscn" id="7_v1hjl"]
+[ext_resource type="PackedScene" uid="uid://b26n543i7auwm" path="res://models/outfits/outfit3/outfit3.blend" id="10_a4xvs"]
+[ext_resource type="PackedScene" uid="uid://b5t8u3kbmttbn" path="res://models/outfits/outfit4/outfit4.blend" id="11_30uhr"]
+[ext_resource type="PackedScene" uid="uid://vgy88vo6qi6" path="res://models/outfits/outfit5/outfit5.blend" id="11_attkr"]
+[ext_resource type="PackedScene" uid="uid://dpma5s223pv1m" path="res://models/outfits/outfit6/outfit6.blend" id="12_ncag2"]
+[ext_resource type="PackedScene" uid="uid://cxx2c2krjohvo" path="res://models/outfits/outfit8/outfit8.blend" id="14_0g4ih"]
+[ext_resource type="PackedScene" uid="uid://cmdhxseoy12u" path="res://models/outfits/outfit7/outfit7.blend" id="14_sb12j"]
+[ext_resource type="PackedScene" uid="uid://d10cxt66bmxkk" path="res://models/outfits/outfit9/outfit9.blend" id="15_p58gf"]
+[ext_resource type="PackedScene" uid="uid://btqs13j3lvo86" path="res://models/outfits/outfit10/outfit10.blend" id="16_oyxjf"]
+[ext_resource type="PackedScene" uid="uid://b5gnjtofwcyv6" path="res://models/outfits/outfit11/outfit11.blend" id="17_5jnrf"]
+[ext_resource type="PackedScene" uid="uid://daro7h2k7xd66" path="res://models/outfits/outfit12/outfit12.blend" id="18_5jnrf"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_srhf4"]
-sky_top_color = Color(0.617351, 0.353067, 0.459213, 1)
-sky_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
-ground_bottom_color = Color(0.476249, 0.193804, 0.221659, 1)
-ground_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
+[sub_resource type="PackedScene" id="PackedScene_a4xvs"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell", "Torus_002"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("3_lu2ng")],
+"version": 3
+}
 
-[sub_resource type="Sky" id="Sky_4fj4n"]
-sky_material = SubResource("ProceduralSkyMaterial_srhf4")
+[sub_resource type="PackedScene" id="PackedScene_30uhr"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell", "Torus_002"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("3_lu2ng")],
+"version": 3
+}
 
-[sub_resource type="Environment" id="Environment_upre0"]
-background_mode = 2
-sky = SubResource("Sky_4fj4n")
-tonemap_mode = 2
-glow_enabled = true
+[sub_resource type="PackedScene" id="PackedScene_attkr"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("3_lu2ng")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_ncag2"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("3_lu2ng")],
+"version": 3
+}
 
 [node name="OutfitSelect" type="Node3D"]
 script = ExtResource("1_upre0")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_upre0")
+[node name="Track" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0030082166, -10.13614, -85.382355)
+
+[node name="straight3" parent="Track" instance=ExtResource("2_48j00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, 122.76451)
+red_blood_cell = SubResource("PackedScene_a4xvs")
+
+[node name="straight4" parent="Track" instance=ExtResource("2_48j00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, 41.495407)
+red_blood_cell = SubResource("PackedScene_30uhr")
+
+[node name="straight5" parent="Track" instance=ExtResource("2_48j00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, -35.322617)
+red_blood_cell = SubResource("PackedScene_attkr")
+
+[node name="straight6" parent="Track" instance=ExtResource("2_48j00")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, -113.0042)
+red_blood_cell = SubResource("PackedScene_ncag2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0195801)
+environment = ExtResource("1_4fj4n")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
 transform = Transform3D(0.94329804, 0, 0.3319471, 0, 1, 0, -0.3319471, 0, 0.94329804, 1.2123163, 2.3841858e-07, 0.18417978)
-light_energy = 1.5
 light_indirect_energy = 2.0
 
-[node name="SelectCharacter" parent="." instance=ExtResource("1_srhf4")]
+[node name="SelectCharacterText" parent="." instance=ExtResource("1_srhf4")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)
 
 [node name="Outfits" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
 
-[node name="hugo" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.781, -0.828, 0)
+[node name="outfit1" parent="Outfits" instance=ExtResource("3_k6hjx")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.781, -1.1598659, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo2" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -0.82842433, 0)
+[node name="outfit2" parent="Outfits" instance=ExtResource("5_obksr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.7535623, -1.2250233, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo3" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -0.82842433, 0)
+[node name="outfit3" parent="Outfits" instance=ExtResource("10_a4xvs")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -1.1855197, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo4" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -0.82842433, 0)
+[node name="outfit4" parent="Outfits" instance=ExtResource("11_30uhr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6575553, -1.1628544, 0.0050895214)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo5" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.761, -1.8363296, 0)
+[node name="outfit5" parent="Outfits" instance=ExtResource("11_attkr")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8085885, -2.2256017, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo6" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -1.8363296, 0)
+[node name="outfit6" parent="Outfits" instance=ExtResource("12_ncag2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.186167, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo7" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -1.8363296, 0)
+[node name="outfit7" parent="Outfits" instance=ExtResource("14_sb12j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.138012, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo8" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -1.8363296, 0)
+[node name="outfit8" parent="Outfits" instance=ExtResource("14_0g4ih")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6194521, -2.2390857, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo9" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.761, -2.8225164, 0)
+[node name="outfit9" parent="Outfits" instance=ExtResource("15_p58gf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8342713, -3.1389985, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo10" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.8225164, 0)
+[node name="outfit10" parent="Outfits" instance=ExtResource("16_oyxjf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.71170735, -3.1546354, 0.00659132)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo11" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.8225164, 0)
+[node name="outfit11" parent="Outfits" instance=ExtResource("17_5jnrf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -3.16439, 0)
 script = ExtResource("4_6s8jx")
 
-[node name="hugo12" parent="Outfits" instance=ExtResource("2_4fj4n")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -2.8225164, 0)
+[node name="outfit12" parent="Outfits" instance=ExtResource("18_5jnrf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -3.1822457, 0)
 script = ExtResource("4_6s8jx")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 autostart = true
+
+[node name="BiologyBookText" parent="." instance=ExtResource("7_v1hjl")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0030082166, 0.30159658, -1.0742188)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

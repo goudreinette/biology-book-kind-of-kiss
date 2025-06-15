@@ -12,7 +12,7 @@ class_name TrackModule extends Node3D
 func _ready():
 	var cell: Node3D = red_blood_cell.instantiate()
 	#cell.global_position = end.global_position
-	end.add_child(cell)
+	#end.add_child(cell)
 
 
 
