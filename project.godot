@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Biology Book Kind of Kiss"
+run/main_scene="uid://dtjn8j1wteo3m"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="uid://wc2vkkmf72t2"
+
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=480
+window/stretch/scale_mode="integer"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.4565274, 0.21167155, 0.27749136, 1)

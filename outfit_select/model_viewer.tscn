@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo6d1s1yrke0q"]
+
+[ext_resource type="PackedScene" uid="uid://fc1tmdovnpo8" path="res://models/outfits/hugo/hugo.blend" id="1_4wfl3"]
+[ext_resource type="Script" uid="uid://cwqj6p2m8u3mc" path="res://outfit_select/model_anchor.gd" id="1_ly65h"]
+
+[node name="ModelViewer" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.27874368)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(0.94329804, 0, 0.3319471, 0, 1, 0, -0.3319471, 0, 0.94329804, 1.2123163, 2.3841858e-07, 0.46292347)
+light_energy = 1.5
+light_indirect_energy = 2.0
+
+[node name="ModelAnchor" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.4045173, -2.3949618)
+script = ExtResource("1_ly65h")
+
+[node name="hugo" parent="ModelAnchor" instance=ExtResource("1_4wfl3")]
+
+[node name="Timer" type="Timer" parent="ModelAnchor"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="ModelAnchor/Timer" to="ModelAnchor" method="_on_timer_timeout"]

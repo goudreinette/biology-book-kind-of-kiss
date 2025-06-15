@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cua81oum7yijw"]
+
+[ext_resource type="PackedScene" uid="uid://u53tys7kh6ml" path="res://models/chromosome-x/source/ChromosomeX.fbx" id="1_fa71y"]
+[ext_resource type="Texture2D" uid="uid://c6huq16jenqf6" path="res://models/chromosome-x/textures/Chromosome_X_color.png" id="2_o1lb5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tdln"]
+albedo_texture = ExtResource("2_o1lb5")
+
+[node name="ChromosomeX" instance=ExtResource("1_fa71y")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CromossomaX" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8tdln")

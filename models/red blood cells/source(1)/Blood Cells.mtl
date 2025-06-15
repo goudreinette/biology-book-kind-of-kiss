@@ -1,0 +1,13 @@
+# Blender 4.2.0 MTL File: 'Blood Cells.blend'
+# www.blender.org
+
+newmtl Red
+Ns 0.000000
+Ka 0.094488 0.094488 0.094488
+Kd 0.239540 0.006592 0.003787
+Ks 0.173228 0.173228 0.173228
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Bump -bm 1.000000 C:/Rough_Painted_Wall_001_NORM.jpg
