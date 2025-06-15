@@ -1,3 +1,96 @@
-[gd_scene format=3 uid="uid://cpinfibylp4rb"]
+[gd_scene load_steps=8 format=3 uid="uid://cpinfibylp4rb"]
+
+[ext_resource type="PackedScene" uid="uid://dfpocqlko5n00" path="res://models/text/select character.tscn" id="1_srhf4"]
+[ext_resource type="Script" uid="uid://dglo1cu2xjpl1" path="res://outfit_select/outfit_select.gd" id="1_upre0"]
+[ext_resource type="PackedScene" uid="uid://fc1tmdovnpo8" path="res://models/outfits/hugo/hugo.blend" id="2_4fj4n"]
+[ext_resource type="Script" uid="uid://bkorkqo38v2p0" path="res://models/outfits/outfit.gd" id="4_6s8jx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_srhf4"]
+sky_top_color = Color(0.617351, 0.353067, 0.459213, 1)
+sky_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
+ground_bottom_color = Color(0.476249, 0.193804, 0.221659, 1)
+ground_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
+
+[sub_resource type="Sky" id="Sky_4fj4n"]
+sky_material = SubResource("ProceduralSkyMaterial_srhf4")
+
+[sub_resource type="Environment" id="Environment_upre0"]
+background_mode = 2
+sky = SubResource("Sky_4fj4n")
+tonemap_mode = 2
+glow_enabled = true
 
 [node name="OutfitSelect" type="Node3D"]
+script = ExtResource("1_upre0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_upre0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0195801)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
+transform = Transform3D(0.94329804, 0, 0.3319471, 0, 1, 0, -0.3319471, 0, 0.94329804, 1.2123163, 2.3841858e-07, 0.18417978)
+light_energy = 1.5
+light_indirect_energy = 2.0
+
+[node name="SelectCharacter" parent="." instance=ExtResource("1_srhf4")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)
+
+[node name="Outfits" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
+
+[node name="hugo" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.781, -0.828, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo2" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -0.82842433, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo3" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -0.82842433, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo4" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -0.82842433, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo5" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.761, -1.8363296, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo6" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -1.8363296, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo7" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -1.8363296, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo8" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -1.8363296, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo9" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.761, -2.8225164, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo10" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.8225164, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo11" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.8225164, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="hugo12" parent="Outfits" instance=ExtResource("2_4fj4n")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.601, -2.8225164, 0)
+script = ExtResource("4_6s8jx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

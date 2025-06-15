@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfpocqlko5n00"]
+
+[ext_resource type="PackedScene" uid="uid://xqrp554pv0ef" path="res://models/text.blend" id="1_fvgso"]
+
+[node name="text" instance=ExtResource("1_fvgso")]
+
+[node name="ST2_A Biology Book Kind _BakedFrames_Anchor" parent="." index="1"]
+visible = false

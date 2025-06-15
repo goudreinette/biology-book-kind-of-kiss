@@ -13,6 +13,7 @@ config_version=5
 config/name="Biology Book Kind of Kiss"
 run/main_scene="uid://dtjn8j1wteo3m"
 config/features=PackedStringArray("4.5", "Forward Plus")
+run/max_fps=60
 config/icon="uid://wc2vkkmf72t2"
 
 [display]

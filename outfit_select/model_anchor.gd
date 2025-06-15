@@ -6,7 +6,6 @@ extends Node3D
 @export var auto_rotate_speed = 0.25
 
 @export var auto_rotating = false
-@onready var inactive_timer = get_tree().create_timer(1.0)
 
 
 func _process(delta):
