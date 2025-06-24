@@ -81,6 +81,7 @@ script = ExtResource("1_upre0")
 
 [node name="Track" type="Node3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.0030082166, -10.13614, -85.382355)
+visible = false
 
 [node name="straight3" parent="Track" instance=ExtResource("2_48j00")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, 122.76451)
@@ -100,11 +101,8 @@ red_blood_cell = SubResource("PackedScene_ncag2")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.0195801)
+visible = false
 environment = ExtResource("1_4fj4n")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D"]
-transform = Transform3D(0.94329804, 0, 0.3319471, 0, 1, 0, -0.3319471, 0, 0.94329804, 1.2123163, 2.3841858e-07, 0.18417978)
-light_indirect_energy = 2.0
 
 [node name="SelectCharacterText" parent="." instance=ExtResource("1_srhf4")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dtjn8j1wteo3m"]
+[gd_scene load_steps=44 format=3 uid="uid://dtjn8j1wteo3m"]
 
 [ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://game/move_forward.gd" id="1_dxwpq"]
 [ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://game/game.gd" id="1_mhvfb"]
@@ -6,20 +6,36 @@
 [ext_resource type="PackedScene" uid="uid://csbyy30jmmsn7" path="res://models/ships/minimal.blend" id="4_5e03w"]
 [ext_resource type="PackedScene" uid="uid://cua81oum7yijw" path="res://models/chromosome-x/chromosome_x.tscn" id="4_dxwpq"]
 [ext_resource type="Environment" uid="uid://5ggkd7q5fh6x" path="res://environments/world_environment.tres" id="4_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://dfpocqlko5n00" path="res://models/text/select character.tscn" id="5_mhp6k"]
 [ext_resource type="PackedScene" uid="uid://cjfjpdvfvhluc" path="res://models/glucosemolecule/source/GlucoseMolecule.fbx" id="5_mhvfb"]
+[ext_resource type="Script" uid="uid://dglo1cu2xjpl1" path="res://outfit_select/outfit_select.gd" id="5_vkvnp"]
 [ext_resource type="PackedScene" uid="uid://dvqqvfv4t3hto" path="res://models/stylizeddigestivesystem.blend" id="6_5e03w"]
 [ext_resource type="PackedScene" uid="uid://dur68w0ks2svm" path="res://models/red blood cells/red blood cell.blend" id="6_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://cukg1r7lls58j" path="res://models/outfits/outfit1/outfit1.blend" id="6_vkvnp"]
 [ext_resource type="ArrayMesh" uid="uid://c2gk1lr1sxslp" path="res://models/red blood cells/source(1)/Blood Cells.obj" id="7_leid8"]
+[ext_resource type="Script" uid="uid://bkorkqo38v2p0" path="res://models/outfits/outfit.gd" id="7_urpib"]
 [ext_resource type="PackedScene" uid="uid://c7wynu5ycek4q" path="res://models/white blood cell/WBC.blend" id="8_8bboj"]
+[ext_resource type="PackedScene" uid="uid://blg8suql48juf" path="res://models/outfits/outfit2/outfit2.blend" id="8_cieqw"]
 [ext_resource type="Texture2D" uid="uid://dfsonkyl6fkvm" path="res://ui/ui.png" id="9_q52ks"]
+[ext_resource type="PackedScene" uid="uid://b26n543i7auwm" path="res://models/outfits/outfit3/outfit3.blend" id="9_ta815"]
+[ext_resource type="PackedScene" uid="uid://b5t8u3kbmttbn" path="res://models/outfits/outfit4/outfit4.blend" id="10_64wtb"]
+[ext_resource type="PackedScene" uid="uid://vgy88vo6qi6" path="res://models/outfits/outfit5/outfit5.blend" id="11_0rekh"]
 [ext_resource type="PackedScene" uid="uid://ch2p1duhdgr8s" path="res://models/beads/Biology beads Tyra_GLTF 2/blauw pil.glb" id="11_jdpby"]
 [ext_resource type="PackedScene" uid="uid://crs70nmmly1xt" path="res://models/beads/Biology beads Tyra_GLTF 2/Bol met pijl.glb" id="12_58yx1"]
+[ext_resource type="PackedScene" uid="uid://dpma5s223pv1m" path="res://models/outfits/outfit6/outfit6.blend" id="12_281ou"]
 [ext_resource type="PackedScene" uid="uid://c5uebnyvht78v" path="res://models/beads/Biology beads Tyra_GLTF 2/Cry.glb" id="13_hbvmx"]
+[ext_resource type="PackedScene" uid="uid://cmdhxseoy12u" path="res://models/outfits/outfit7/outfit7.blend" id="13_nrbry"]
 [ext_resource type="PackedScene" uid="uid://bnollpvij57lp" path="res://models/beads/Biology beads Tyra_GLTF 2/hip thingy big blu.glb" id="14_fegy3"]
+[ext_resource type="PackedScene" uid="uid://cxx2c2krjohvo" path="res://models/outfits/outfit8/outfit8.blend" id="14_iswgq"]
+[ext_resource type="PackedScene" uid="uid://d10cxt66bmxkk" path="res://models/outfits/outfit9/outfit9.blend" id="15_7tmf6"]
 [ext_resource type="PackedScene" uid="uid://ixvd5jfexvme" path="res://models/beads/Biology beads Tyra_GLTF 2/Pijl groot.glb" id="15_pvdu1"]
 [ext_resource type="PackedScene" uid="uid://db0rjax7owpc4" path="res://models/beads/Biology beads Tyra_GLTF 2/Roze ovaal met stokje.glb" id="16_cf130"]
+[ext_resource type="PackedScene" uid="uid://btqs13j3lvo86" path="res://models/outfits/outfit10/outfit10.blend" id="16_sisia"]
 [ext_resource type="PackedScene" uid="uid://dkxmltuoxu35p" path="res://models/beads/Biology beads Tyra_GLTF 2/Teal.glb" id="17_posua"]
+[ext_resource type="PackedScene" uid="uid://b5gnjtofwcyv6" path="res://models/outfits/outfit11/outfit11.blend" id="17_xorak"]
+[ext_resource type="PackedScene" uid="uid://daro7h2k7xd66" path="res://models/outfits/outfit12/outfit12.blend" id="18_4jymc"]
 [ext_resource type="PackedScene" uid="uid://bp22prfiniu31" path="res://models/beads/Biology beads Tyra_GLTF 2/Bolletje 2.5cm (1) 2.glb" id="18_gvtgv"]
+[ext_resource type="PackedScene" uid="uid://ck32avt6vo1mr" path="res://models/text/biologybookkindofkiss.tscn" id="19_0lgry"]
 [ext_resource type="PackedScene" uid="uid://c1cg1hqebaad" path="res://models/stylizedhumanbrain.blend" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/vein_straight.tscn" id="19_u8s88"]
 
@@ -87,14 +103,82 @@ script = ExtResource("1_mhvfb")
 module_vein_straight = ExtResource("19_u8s88")
 
 [node name="LevelPosition" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 168.50383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 177.73608)
 script = ExtResource("1_dxwpq")
 
 [node name="Camera3D" type="Camera3D" parent="LevelPosition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2905579)
 environment = ExtResource("4_mhvfb")
+
+[node name="OutfitSelect" type="Node3D" parent="LevelPosition/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3148346)
+script = ExtResource("5_vkvnp")
+
+[node name="SelectCharacterText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("5_mhp6k")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)
+
+[node name="Outfits" type="Node3D" parent="LevelPosition/Camera3D/OutfitSelect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
+
+[node name="outfit1" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("6_vkvnp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.781, -1.1598659, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit2" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("8_cieqw")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.7535623, -1.2250233, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit3" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("9_ta815")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -1.1855197, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit4" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("10_64wtb")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6575553, -1.1628544, 0.0050895214)
+script = ExtResource("7_urpib")
+
+[node name="outfit5" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("11_0rekh")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8085885, -2.2256017, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit6" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("12_281ou")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.186167, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit7" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("13_nrbry")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.138012, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit8" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("14_iswgq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6194521, -2.2390857, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit9" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("15_7tmf6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8342713, -3.1389985, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit10" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("16_sisia")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.71170735, -3.1546354, 0.00659132)
+script = ExtResource("7_urpib")
+
+[node name="outfit11" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("17_xorak")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -3.16439, 0)
+script = ExtResource("7_urpib")
+
+[node name="outfit12" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("18_4jymc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -3.1822457, 0)
+script = ExtResource("7_urpib")
+
+[node name="Timer" type="Timer" parent="LevelPosition/Camera3D/OutfitSelect"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="BiologyBookText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("19_0lgry")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0030082166, 0.30159658, -1.0742188)
 
 [node name="Ship" parent="LevelPosition" instance=ExtResource("4_5e03w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7245426, -19.024673)
+visible = false
 
 [node name="Track" type="Node3D" parent="."]
 
