@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://na3corti8bjs"
 path.s3tc="res://.godot/imported/Cry_0.png-818c433b4d11d39ae1332f52deafcf94.s3tc.ctex"
+path.etc2="res://.godot/imported/Cry_0.png-818c433b4d11d39ae1332f52deafcf94.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Cry_0.png"
-dest_files=["res://.godot/imported/Cry_0.png-818c433b4d11d39ae1332f52deafcf94.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cry_0.png-818c433b4d11d39ae1332f52deafcf94.s3tc.ctex", "res://.godot/imported/Cry_0.png-818c433b4d11d39ae1332f52deafcf94.etc2.ctex"]
 
 [params]
 

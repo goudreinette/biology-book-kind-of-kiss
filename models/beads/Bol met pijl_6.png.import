@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://b5yh04ghgc48c"
 path.s3tc="res://.godot/imported/Bol met pijl_6.png-8207f216ca3746330b29f31a7f3c4ff5.s3tc.ctex"
+path.etc2="res://.godot/imported/Bol met pijl_6.png-8207f216ca3746330b29f31a7f3c4ff5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Bol met pijl_6.png"
-dest_files=["res://.godot/imported/Bol met pijl_6.png-8207f216ca3746330b29f31a7f3c4ff5.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bol met pijl_6.png-8207f216ca3746330b29f31a7f3c4ff5.s3tc.ctex", "res://.godot/imported/Bol met pijl_6.png-8207f216ca3746330b29f31a7f3c4ff5.etc2.ctex"]
 
 [params]
 

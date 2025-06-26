@@ -1,0 +1,403 @@
+[gd_scene load_steps=60 format=3 uid="uid://dtjn8j1wteo3m"]
+
+[ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://modules/game/move_forward.gd" id="1_dxwpq"]
+[ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://modules/game/game.gd" id="1_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://cy4w7dt4rfruv" path="res://models/dna/source/DNA.fbx" id="3_u8s88"]
+[ext_resource type="PackedScene" uid="uid://csbyy30jmmsn7" path="res://models/ships/minimal.blend" id="4_5e03w"]
+[ext_resource type="PackedScene" uid="uid://cua81oum7yijw" path="res://models/chromosome-x/chromosome_x.tscn" id="4_dxwpq"]
+[ext_resource type="Environment" uid="uid://5ggkd7q5fh6x" path="res://environments/world_environment.tres" id="4_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://dfpocqlko5n00" path="res://models/text/select character.tscn" id="5_mhp6k"]
+[ext_resource type="PackedScene" uid="uid://cjfjpdvfvhluc" path="res://models/glucosemolecule/source/GlucoseMolecule.fbx" id="5_mhvfb"]
+[ext_resource type="Script" uid="uid://dglo1cu2xjpl1" path="res://outfit_select/outfit_select.gd" id="5_vkvnp"]
+[ext_resource type="PackedScene" uid="uid://dvqqvfv4t3hto" path="res://models/stylizeddigestivesystem.blend" id="6_5e03w"]
+[ext_resource type="PackedScene" uid="uid://dur68w0ks2svm" path="res://models/red blood cells/red blood cell.blend" id="6_mhvfb"]
+[ext_resource type="ArrayMesh" uid="uid://c2gk1lr1sxslp" path="res://models/red blood cells/source(1)/Blood Cells.obj" id="7_leid8"]
+[ext_resource type="PackedScene" uid="uid://db1eulehrqits" path="res://outfits/outfit1/outfit1 animated.blend" id="7_nqk1a"]
+[ext_resource type="Script" uid="uid://bkorkqo38v2p0" path="res://outfits/outfit.gd" id="7_urpib"]
+[ext_resource type="PackedScene" uid="uid://c7wynu5ycek4q" path="res://models/white blood cell/WBC.blend" id="8_8bboj"]
+[ext_resource type="PackedScene" uid="uid://bbarx8uddvqh1" path="res://outfits/outfit2/outfit2 animated.blend" id="9_nqk1a"]
+[ext_resource type="Texture2D" uid="uid://dfsonkyl6fkvm" path="res://ui/ui.png" id="9_q52ks"]
+[ext_resource type="PackedScene" uid="uid://b26n543i7auwm" path="res://outfits/outfit3/outfit3.blend" id="9_ta815"]
+[ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="9_wfn4t"]
+[ext_resource type="PackedScene" uid="uid://ch2p1duhdgr8s" path="res://models/beads/Biology beads Tyra_GLTF 2/blauw pil.glb" id="11_jdpby"]
+[ext_resource type="PackedScene" uid="uid://yym0r8r5dt87" path="res://outfits/outfit4/outfit4 animated.blend" id="11_nqk1a"]
+[ext_resource type="PackedScene" uid="uid://crs70nmmly1xt" path="res://models/beads/Biology beads Tyra_GLTF 2/Bol met pijl.glb" id="12_58yx1"]
+[ext_resource type="PackedScene" uid="uid://dpma5s223pv1m" path="res://outfits/outfit6/outfit6.blend" id="12_281ou"]
+[ext_resource type="PackedScene" uid="uid://4pgx53s8xyt1" path="res://outfits/outfit5/outfit5 animated.blend" id="12_nqk1a"]
+[ext_resource type="PackedScene" uid="uid://c5uebnyvht78v" path="res://models/beads/Biology beads Tyra_GLTF 2/Cry.glb" id="13_hbvmx"]
+[ext_resource type="PackedScene" uid="uid://cmdhxseoy12u" path="res://outfits/outfit7/outfit7.blend" id="13_nrbry"]
+[ext_resource type="PackedScene" uid="uid://bnollpvij57lp" path="res://models/beads/Biology beads Tyra_GLTF 2/hip thingy big blu.glb" id="14_fegy3"]
+[ext_resource type="PackedScene" uid="uid://cxx2c2krjohvo" path="res://outfits/outfit8/outfit8.blend" id="14_iswgq"]
+[ext_resource type="PackedScene" uid="uid://d10cxt66bmxkk" path="res://outfits/outfit9/outfit9.blend" id="15_7tmf6"]
+[ext_resource type="PackedScene" uid="uid://ixvd5jfexvme" path="res://models/beads/Biology beads Tyra_GLTF 2/Pijl groot.glb" id="15_pvdu1"]
+[ext_resource type="PackedScene" uid="uid://db0rjax7owpc4" path="res://models/beads/Biology beads Tyra_GLTF 2/Roze ovaal met stokje.glb" id="16_cf130"]
+[ext_resource type="PackedScene" uid="uid://bif5a2exr2cw" path="res://outfits/outfit10/outfit10 animated.blend" id="17_nqk1a"]
+[ext_resource type="PackedScene" uid="uid://dkxmltuoxu35p" path="res://models/beads/Biology beads Tyra_GLTF 2/Teal.glb" id="17_posua"]
+[ext_resource type="PackedScene" uid="uid://daro7h2k7xd66" path="res://outfits/outfit12/outfit12.blend" id="18_4jymc"]
+[ext_resource type="PackedScene" uid="uid://bp22prfiniu31" path="res://models/beads/Biology beads Tyra_GLTF 2/Bolletje 2.5cm (1) 2.glb" id="18_gvtgv"]
+[ext_resource type="PackedScene" uid="uid://7vrdlgr6yeih" path="res://outfits/outfit11/outfit11 animated.blend" id="18_nqk1a"]
+[ext_resource type="PackedScene" uid="uid://ck32avt6vo1mr" path="res://models/text/biologybookkindofkiss.tscn" id="19_0lgry"]
+[ext_resource type="PackedScene" uid="uid://c1cg1hqebaad" path="res://models/stylizedhumanbrain.blend" id="19_pxxsx"]
+[ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/blood/vein_straight.tscn" id="19_u8s88"]
+[ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="22_o6e4d"]
+[ext_resource type="Texture2D" uid="uid://dgoqaohprlhr6" path="res://sprites/critter.png" id="23_ahnrd"]
+[ext_resource type="AudioStream" uid="uid://bvk48uykxan2v" path="res://sounds/cursor.wav" id="24_e3au1"]
+[ext_resource type="AudioStream" uid="uid://cqh3ckgmpxwlq" path="res://sounds/back.wav" id="24_tn4d4"]
+[ext_resource type="AudioStream" uid="uid://bs0g25l8yroan" path="res://sounds/ok.wav" id="25_m6kkv"]
+
+[sub_resource type="Gradient" id="Gradient_wfn4t"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o6e4d"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ahnrd"]
+color_ramp = SubResource("Gradient_wfn4t")
+noise = SubResource("FastNoiseLite_o6e4d")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e3au1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_emw3s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahnrd"]
+render_priority = 0
+shader = ExtResource("22_o6e4d")
+shader_parameter/distortionView = 0.00400000019
+shader_parameter/speedView = 0.06499999854712
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_e3au1")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_emw3s")
+shader_parameter/tintColor = Color(0.9061753, 0.47841117, 0.5544945, 1)
+shader_parameter/fesnelAmount = 3.20000004768384
+shader_parameter/distortionVertex = 0.11499999742952
+shader_parameter/speedVertex = 0.249999994412
+shader_parameter/noiseVertex = SubResource("NoiseTexture2D_ahnrd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3au1"]
+transparency = 1
+albedo_texture = ExtResource("23_ahnrd")
+emission_enabled = true
+emission_texture = ExtResource("23_ahnrd")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_distance = 10.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_emw3s"]
+material = SubResource("StandardMaterial3D_e3au1")
+size = Vector2(0.5, 0.25)
+orientation = 2
+
+[sub_resource type="Curve" id="Curve_ahnrd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.19319826, 0.88396156), 0.0, 0.0, 0, 0, Vector2(0.33408412, 0.61644816), -1.9748211, -1.9748211, 0, 0, Vector2(0.60735744, 0.01054728), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_ahnrd"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="PackedScene" id="PackedScene_mhvfb"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell", "Torus_002"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("6_mhvfb")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_5e03w"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell", "Torus_002"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("6_mhvfb")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_8bboj"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("6_mhvfb")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_q52ks"]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("red blood cell"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 2147483647, 0, -1, 0, 0),
+"variants": [ExtResource("6_mhvfb")],
+"version": 3
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqjgi"]
+albedo_color = Color(0.8944649, 0.19940257, 0.23925556, 1)
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_mhvfb")
+module_vein_straight = ExtResource("19_u8s88")
+limit_from_center = 9.0
+
+[node name="LevelPosition" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 177.73608)
+script = ExtResource("1_dxwpq")
+
+[node name="Camera3D" type="Camera3D" parent="LevelPosition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2905579)
+environment = ExtResource("4_mhvfb")
+
+[node name="OutfitSelect" type="Node3D" parent="LevelPosition/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3148346)
+script = ExtResource("5_vkvnp")
+
+[node name="SelectCharacterText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("5_mhp6k")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)
+
+[node name="Outfits" type="Node3D" parent="LevelPosition/Camera3D/OutfitSelect"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
+
+[node name="outfit1 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("7_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.7646562, -0.6730652, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit1 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.001206398, -0.9111328, 0)
+
+[node name="outfit2 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("9_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6393028, -1.1788158, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit2 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.015859246, 0.04970169, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit3" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("9_ta815")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -1.1855197, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit3" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.036670446, 0.07061386, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit4 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("11_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6575552, -0.7214737, 0.0050964355)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit4 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.021300316, -0.8157692, -0.010192871)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit5 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("12_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.7907025, -1.8883171, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit5 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.0066041946, -0.5345917, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit6" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("12_281ou")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.186167, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit6" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.004083872, 0.0017623901, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit7" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("13_nrbry")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.138012, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit7" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.015575647, -0.11865616, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit8" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("14_iswgq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6194521, -2.2390857, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit8" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.0125284195, 0.08728409, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit9" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("15_7tmf6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8342713, -3.1389985, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit9" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.043952942, -0.015289307, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit10 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("17_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.70604753, -2.7666168, 0.006591797)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit10 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.1711452, -0.8851204, -0.013183594)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit11 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("18_nqk1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.8219604, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit11 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.014297247, -0.8327637, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="outfit12" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("18_4jymc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -3.1822457, 0)
+script = ExtResource("7_urpib")
+
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit12" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.018633842, -0.015136719, 0)
+skeleton = NodePath("../../outfit1 animated")
+
+[node name="Timer" type="Timer" parent="LevelPosition/Camera3D/OutfitSelect"]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="BiologyBookText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("19_0lgry")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0030082166, 0.30159658, -1.0742188)
+
+[node name="MeshInstance3D4" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(3.5, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+skeleton = NodePath("../../outfit1 animated")
+surface_material_override/0 = SubResource("ShaderMaterial_ahnrd")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText"]
+transform = Transform3D(1, 0, 0, 0, -0.9972799, 0.07370802, 0, -0.07370802, -0.9972799, 0, 0, 0.27426147)
+visible = false
+sorting_offset = 1.0
+transparency = 0.26
+amount = 16
+lifetime = 5.0
+local_coords = true
+draw_order = 1
+mesh = SubResource("PlaneMesh_emw3s")
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_amount_curve = SubResource("Curve_ahnrd")
+color_ramp = SubResource("Gradient_ahnrd")
+
+[node name="Back" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
+stream = ExtResource("24_tn4d4")
+
+[node name="Ok" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
+stream = ExtResource("25_m6kkv")
+
+[node name="Cursor" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
+stream = ExtResource("24_e3au1")
+
+[node name="Ship" parent="LevelPosition" instance=ExtResource("4_5e03w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7245426, -19.024673)
+
+[node name="Track" type="Node3D" parent="."]
+
+[node name="straight3" parent="Track" instance=ExtResource("19_u8s88")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, 122.76451)
+red_blood_cell = SubResource("PackedScene_mhvfb")
+
+[node name="straight4" parent="Track" instance=ExtResource("19_u8s88")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, 41.495407)
+red_blood_cell = SubResource("PackedScene_5e03w")
+
+[node name="straight5" parent="Track" instance=ExtResource("19_u8s88")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, -35.322617)
+red_blood_cell = SubResource("PackedScene_8bboj")
+
+[node name="straight6" parent="Track" instance=ExtResource("19_u8s88")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 23.904922, -113.0042)
+red_blood_cell = SubResource("PackedScene_q52ks")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="DNA" parent="." instance=ExtResource("3_u8s88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5940405, 0, 0)
+
+[node name="ChromosomeX" parent="." instance=ExtResource("4_dxwpq")]
+transform = Transform3D(7.0651407, 3.0889077, -6.367293, 0, 8.997177, 4.36472, 7.0769887, -3.0837362, 6.3566327, 5.220599, 23.949772, 48.511505)
+
+[node name="ChromosomeX2" parent="." instance=ExtResource("4_dxwpq")]
+transform = Transform3D(7.0651407, 3.0889077, -6.367293, 0, 8.997177, 4.36472, 7.0769887, -3.0837362, 6.3566327, 39.17657, 23.949772, 86.69276)
+
+[node name="GlucoseMolecule" parent="." instance=ExtResource("5_mhvfb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 30.452038, 36.482536, 0)
+
+[node name="stylizeddigestivesystem" parent="." instance=ExtResource("6_5e03w")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 45.096912, 28.42889, 0)
+
+[node name="BloodCells" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -4.3721375, 21.426687, 104.797165)
+mesh = ExtResource("7_leid8")
+surface_material_override/0 = SubResource("StandardMaterial3D_rqjgi")
+
+[node name="BloodCells3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -4.3721375, 21.426687, -52.395462)
+mesh = ExtResource("7_leid8")
+surface_material_override/0 = SubResource("StandardMaterial3D_rqjgi")
+
+[node name="BloodCells2" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.9953322, 9.167187, 0, -9.167187, 3.9953322, 0, 0, 0, 10, 7.423929, 26.634907, 60.661583)
+mesh = ExtResource("7_leid8")
+surface_material_override/0 = SubResource("StandardMaterial3D_rqjgi")
+
+[node name="WBC" parent="." instance=ExtResource("8_8bboj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.583893, 19.739044, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Ui" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+texture_filter = 1
+position = Vector2(286, 489.5)
+scale = Vector2(17.874998, 15.296875)
+texture = ExtResource("9_q52ks")
+
+[node name="blauw pil" parent="." instance=ExtResource("11_jdpby")]
+transform = Transform3D(10, 0, 0, 0, 6.4067273, -7.678141, 0, 7.678141, 6.4067273, 36.68082, 28.0602, 143.35915)
+
+[node name="Bol met pijl" parent="." instance=ExtResource("12_58yx1")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 37.9944, 28.104668, 141.46687)
+
+[node name="Cry" parent="." instance=ExtResource("13_hbvmx")]
+transform = Transform3D(20, 0, 0, 0, 11.853763, -16.10864, 0, 16.10864, 11.853763, 35.242264, 26.40397, 141.48569)
+
+[node name="hip thingy big blu" parent="." instance=ExtResource("14_fegy3")]
+transform = Transform3D(15, 0, 0, 0, 12.498309, -8.294111, 0, 8.294111, 12.498309, 38.52798, 26.405071, 141.315)
+
+[node name="Pijl groot" parent="." instance=ExtResource("15_pvdu1")]
+transform = Transform3D(-3.57796, 7.1405325, -18.33606, -14.348294, 11.806807, 7.3976903, 13.465688, 14.477988, 3.010507, 34.85692, 28.024355, 141.50763)
+
+[node name="Roze ovaal met stokje" parent="." instance=ExtResource("16_cf130")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 29.8544, 20.673882, 137.29504)
+
+[node name="Teal" parent="." instance=ExtResource("17_posua")]
+transform = Transform3D(11.385768, 13.71965, 9.062852, 2.814983, 9.234357, -17.51578, -16.200003, 11.247119, 3.3259854, 30.460081, 24.441782, 139.85669)
+
+[node name="Bolletje 2_5cm (1) 2" parent="." instance=ExtResource("18_gvtgv")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 34.72906, 23.799402, 139.53783)
+
+[node name="stylizedhumanbrain" parent="." instance=ExtResource("19_pxxsx")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 56.12015, 35.021603, -0.36409616)

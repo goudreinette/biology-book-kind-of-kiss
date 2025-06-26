@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfu1aaq30m8c5"
 path.s3tc="res://.godot/imported/Bol oranje groot_4.png-b03a9e91ff615903fe2fb82d9def45f9.s3tc.ctex"
+path.etc2="res://.godot/imported/Bol oranje groot_4.png-b03a9e91ff615903fe2fb82d9def45f9.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Biology beads Tyra_GLTF 2/Bol oranje groot_4.png"
-dest_files=["res://.godot/imported/Bol oranje groot_4.png-b03a9e91ff615903fe2fb82d9def45f9.s3tc.ctex"]
+dest_files=["res://.godot/imported/Bol oranje groot_4.png-b03a9e91ff615903fe2fb82d9def45f9.s3tc.ctex", "res://.godot/imported/Bol oranje groot_4.png-b03a9e91ff615903fe2fb82d9def45f9.etc2.ctex"]
 
 [params]
 

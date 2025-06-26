@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbmokqddsr6p6"
 path.s3tc="res://.godot/imported/StylizedHumanBrain_Diffuse.png-4cceac2312c4f9a24d905750cb740132.s3tc.ctex"
+path.etc2="res://.godot/imported/StylizedHumanBrain_Diffuse.png-4cceac2312c4f9a24d905750cb740132.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={}
@@ -13,7 +14,7 @@ generator_parameters={}
 [deps]
 
 source_file="res://models/red blood cells/textures/StylizedHumanBrain_Diffuse.png"
-dest_files=["res://.godot/imported/StylizedHumanBrain_Diffuse.png-4cceac2312c4f9a24d905750cb740132.s3tc.ctex"]
+dest_files=["res://.godot/imported/StylizedHumanBrain_Diffuse.png-4cceac2312c4f9a24d905750cb740132.s3tc.ctex", "res://.godot/imported/StylizedHumanBrain_Diffuse.png-4cceac2312c4f9a24d905750cb740132.etc2.ctex"]
 
 [params]
 

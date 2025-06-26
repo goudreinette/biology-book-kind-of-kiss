@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://178fxefs65i1"
 path.s3tc="res://.godot/imported/Molecula_normal.png-1f7c2ba736d627be05909c4b750183ec.s3tc.ctex"
+path.etc2="res://.godot/imported/Molecula_normal.png-1f7c2ba736d627be05909c4b750183ec.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/glucosemolecule/textures/Molecula_normal.png"
-dest_files=["res://.godot/imported/Molecula_normal.png-1f7c2ba736d627be05909c4b750183ec.s3tc.ctex"]
+dest_files=["res://.godot/imported/Molecula_normal.png-1f7c2ba736d627be05909c4b750183ec.s3tc.ctex", "res://.godot/imported/Molecula_normal.png-1f7c2ba736d627be05909c4b750183ec.etc2.ctex"]
 
 [params]
 

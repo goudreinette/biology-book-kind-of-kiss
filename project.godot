@@ -18,10 +18,12 @@ config/icon="uid://wc2vkkmf72t2"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=512
+window/size/viewport_width=1280
+window/size/viewport_height=960
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
+window/dpi/allow_hidpi=false
 
 [input]
 
@@ -42,4 +44,8 @@ ui_cancel={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+textures/vram_compression/import_etc2_astc=true
+textures/decals/filter=0
+textures/light_projectors/filter=0
 environment/defaults/default_clear_color=Color(0.4565274, 0.21167155, 0.27749136, 1)

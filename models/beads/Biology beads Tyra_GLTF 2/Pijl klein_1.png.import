@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxn2uhaf72aar"
 path.s3tc="res://.godot/imported/Pijl klein_1.png-1eca44c7cd3388660fba35686ff9e2e4.s3tc.ctex"
+path.etc2="res://.godot/imported/Pijl klein_1.png-1eca44c7cd3388660fba35686ff9e2e4.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Biology beads Tyra_GLTF 2/Pijl klein_1.png"
-dest_files=["res://.godot/imported/Pijl klein_1.png-1eca44c7cd3388660fba35686ff9e2e4.s3tc.ctex"]
+dest_files=["res://.godot/imported/Pijl klein_1.png-1eca44c7cd3388660fba35686ff9e2e4.s3tc.ctex", "res://.godot/imported/Pijl klein_1.png-1eca44c7cd3388660fba35686ff9e2e4.etc2.ctex"]
 
 [params]
 

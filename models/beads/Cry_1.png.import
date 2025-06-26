@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://do6wtcpi1quw7"
 path.s3tc="res://.godot/imported/Cry_1.png-ca2b20496afa73285b647085f32dbfaf.s3tc.ctex"
+path.etc2="res://.godot/imported/Cry_1.png-ca2b20496afa73285b647085f32dbfaf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Cry_1.png"
-dest_files=["res://.godot/imported/Cry_1.png-ca2b20496afa73285b647085f32dbfaf.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cry_1.png-ca2b20496afa73285b647085f32dbfaf.s3tc.ctex", "res://.godot/imported/Cry_1.png-ca2b20496afa73285b647085f32dbfaf.etc2.ctex"]
 
 [params]
 

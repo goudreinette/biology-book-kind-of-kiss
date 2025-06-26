@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6huq16jenqf6"
 path.s3tc="res://.godot/imported/Chromosome_X_color.png-2cc73941e20dc5333ec840597a8a8c5e.s3tc.ctex"
+path.etc2="res://.godot/imported/Chromosome_X_color.png-2cc73941e20dc5333ec840597a8a8c5e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/chromosome-x/textures/Chromosome_X_color.png"
-dest_files=["res://.godot/imported/Chromosome_X_color.png-2cc73941e20dc5333ec840597a8a8c5e.s3tc.ctex"]
+dest_files=["res://.godot/imported/Chromosome_X_color.png-2cc73941e20dc5333ec840597a8a8c5e.s3tc.ctex", "res://.godot/imported/Chromosome_X_color.png-2cc73941e20dc5333ec840597a8a8c5e.etc2.ctex"]
 
 [params]
 

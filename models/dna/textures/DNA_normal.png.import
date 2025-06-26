@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cthcv27yhtl5o"
 path.s3tc="res://.godot/imported/DNA_normal.png-4b07050c6b69b6e41d0e66add5336c5a.s3tc.ctex"
+path.etc2="res://.godot/imported/DNA_normal.png-4b07050c6b69b6e41d0e66add5336c5a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/dna/textures/DNA_normal.png"
-dest_files=["res://.godot/imported/DNA_normal.png-4b07050c6b69b6e41d0e66add5336c5a.s3tc.ctex"]
+dest_files=["res://.godot/imported/DNA_normal.png-4b07050c6b69b6e41d0e66add5336c5a.s3tc.ctex", "res://.godot/imported/DNA_normal.png-4b07050c6b69b6e41d0e66add5336c5a.etc2.ctex"]
 
 [params]
 

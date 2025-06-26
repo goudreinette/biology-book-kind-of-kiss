@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://5kwaluqk3evs"
 path.s3tc="res://.godot/imported/Red triangle_1.png-e75e48e003a38da608407d7eb05a9339.s3tc.ctex"
+path.etc2="res://.godot/imported/Red triangle_1.png-e75e48e003a38da608407d7eb05a9339.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Red triangle_1.png"
-dest_files=["res://.godot/imported/Red triangle_1.png-e75e48e003a38da608407d7eb05a9339.s3tc.ctex"]
+dest_files=["res://.godot/imported/Red triangle_1.png-e75e48e003a38da608407d7eb05a9339.s3tc.ctex", "res://.godot/imported/Red triangle_1.png-e75e48e003a38da608407d7eb05a9339.etc2.ctex"]
 
 [params]
 

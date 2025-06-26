@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://v5ma0hvexhtb"
 path.s3tc="res://.godot/imported/Atom_normal.png-3e3a5075df64f4838405880a66fecc95.s3tc.ctex"
+path.etc2="res://.godot/imported/Atom_normal.png-3e3a5075df64f4838405880a66fecc95.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/atom/textures/Atom_normal.png"
-dest_files=["res://.godot/imported/Atom_normal.png-3e3a5075df64f4838405880a66fecc95.s3tc.ctex"]
+dest_files=["res://.godot/imported/Atom_normal.png-3e3a5075df64f4838405880a66fecc95.s3tc.ctex", "res://.godot/imported/Atom_normal.png-3e3a5075df64f4838405880a66fecc95.etc2.ctex"]
 
 [params]
 

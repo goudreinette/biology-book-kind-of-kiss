@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo6d1s1yrke0q"]
 
-[ext_resource type="PackedScene" uid="uid://fc1tmdovnpo8" path="res://models/outfits/hugo/hugo.blend" id="1_4wfl3"]
+[ext_resource type="PackedScene" uid="uid://fc1tmdovnpo8" path="res://outfits/hugo/hugo.blend" id="1_4wfl3"]
 [ext_resource type="Script" uid="uid://cwqj6p2m8u3mc" path="res://outfit_select/model_anchor.gd" id="1_ly65h"]
 
 [node name="ModelViewer" type="Node3D"]

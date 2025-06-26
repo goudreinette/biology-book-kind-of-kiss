@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckykxf7ynn8q7"
 path.s3tc="res://.godot/imported/DNA_color.png-f725ba0d1568e5ec1a843272937c708b.s3tc.ctex"
+path.etc2="res://.godot/imported/DNA_color.png-f725ba0d1568e5ec1a843272937c708b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://models/dna/textures/DNA_color.png"
-dest_files=["res://.godot/imported/DNA_color.png-f725ba0d1568e5ec1a843272937c708b.s3tc.ctex"]
+dest_files=["res://.godot/imported/DNA_color.png-f725ba0d1568e5ec1a843272937c708b.s3tc.ctex", "res://.godot/imported/DNA_color.png-f725ba0d1568e5ec1a843272937c708b.etc2.ctex"]
 
 [params]
 

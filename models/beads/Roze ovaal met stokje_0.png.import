@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://pkgpfj5k6j1c"
 path.s3tc="res://.godot/imported/Roze ovaal met stokje_0.png-32e3a94d7a739567365c6c9c91527ddf.s3tc.ctex"
+path.etc2="res://.godot/imported/Roze ovaal met stokje_0.png-32e3a94d7a739567365c6c9c91527ddf.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Roze ovaal met stokje_0.png"
-dest_files=["res://.godot/imported/Roze ovaal met stokje_0.png-32e3a94d7a739567365c6c9c91527ddf.s3tc.ctex"]
+dest_files=["res://.godot/imported/Roze ovaal met stokje_0.png-32e3a94d7a739567365c6c9c91527ddf.s3tc.ctex", "res://.godot/imported/Roze ovaal met stokje_0.png-32e3a94d7a739567365c6c9c91527ddf.etc2.ctex"]
 
 [params]
 

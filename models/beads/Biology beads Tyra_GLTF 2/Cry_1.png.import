@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cte7bv47h6s5v"
 path.s3tc="res://.godot/imported/Cry_1.png-5dfd8688b9c1e1c68cb12c721120d19d.s3tc.ctex"
+path.etc2="res://.godot/imported/Cry_1.png-5dfd8688b9c1e1c68cb12c721120d19d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://models/beads/Biology beads Tyra_GLTF 2/Cry_1.png"
-dest_files=["res://.godot/imported/Cry_1.png-5dfd8688b9c1e1c68cb12c721120d19d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Cry_1.png-5dfd8688b9c1e1c68cb12c721120d19d.s3tc.ctex", "res://.godot/imported/Cry_1.png-5dfd8688b9c1e1c68cb12c721120d19d.etc2.ctex"]
 
 [params]
 
