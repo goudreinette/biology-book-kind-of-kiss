@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/straight.blend-676056f2715fb4d59635d31aef21ec
 
 nodes/root_type=""
 nodes/root_name=""
+nodes/root_script=null
 nodes/apply_root_scale=false
 nodes/root_scale=10.0
 nodes/import_as_skeleton_bones=false
@@ -33,9 +34,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={
 "animations": {
-"CylinderAction_001": {
+"Pulse": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -2093,9 +2097,6 @@ _subresources={
 }
 },
 "nodes": {
-"PATH:Cylinder": {
-"import/skip_import": true
-},
 "PATH:Point": {
 "import/skip_import": true
 },
@@ -2122,3 +2123,4 @@ blender/materials/export_materials=1
 blender/animation/limit_playback=true
 blender/animation/always_sample=true
 blender/animation/group_tracks=true
+gltf/naming_version=0

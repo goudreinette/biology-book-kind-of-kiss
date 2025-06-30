@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://blvb6usv2xgmj"]
+
+[ext_resource type="Script" uid="uid://cov83l3emt14k" path="res://pickups/pickup.gd" id="1_rofgj"]
+[ext_resource type="PackedScene" uid="uid://c35tymltkr2iy" path="res://models/beads/Roze ovaal met stokje.glb" id="2_rofgj"]
+[ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="3_fbpyb"]
+[ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="4_iubmy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ss3m5"]
+radius = 0.75
+height = 1.5
+
+[sub_resource type="Gradient" id="Gradient_4j7lo"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qc7qa"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ahnrd"]
+color_ramp = SubResource("Gradient_4j7lo")
+noise = SubResource("FastNoiseLite_qc7qa")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e3au1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_emw3s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gswoh"]
+render_priority = 0
+shader = ExtResource("4_iubmy")
+shader_parameter/distortionView = 0.00400000019
+shader_parameter/speedView = 0.06499999854712
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_e3au1")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_emw3s")
+shader_parameter/tintColor = Color(0.77366084, 0.36378446, 0.7551962, 1)
+shader_parameter/fesnelAmount = 2.80000004172336
+shader_parameter/distortionVertex = 0.0499999988824
+shader_parameter/speedVertex = 0.18999999575312
+shader_parameter/noiseVertex = SubResource("NoiseTexture2D_ahnrd")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uavhn"]
+radius = 2.5
+
+[node name="PinkStick" type="Area3D"]
+script = ExtResource("1_rofgj")
+color = Color(1, 0.6666667, 0.8862745, 1)
+
+[node name="model" parent="." instance=ExtResource("2_rofgj")]
+
+[node name="Orb" parent="model" instance=ExtResource("3_fbpyb")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.001206398, -0.050345838, 0)
+mesh = SubResource("SphereMesh_ss3m5")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_gswoh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_uavhn")

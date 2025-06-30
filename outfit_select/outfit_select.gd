@@ -110,11 +110,14 @@ func _input(event):
 			if event.is_action_pressed("ui_cancel"):
 				chose_a_model = false
 				zoom = Vector3(0,0,0)
-				chosen_outfit.stop_animation()
+				chosen_outfit.stop_animation(false)
 				$Back.play()
+				for n in $"../../Ship".get_children():
+					n.queue_free()
+				#.remove_child()
 				
 			if event.is_action_pressed("ui_accept"):
-				$"../../../".new_game()
+				$"../../../".new_game(chosen_outfit)
 		else:
 			if event.is_action_pressed("ui_cancel"):
 				title_screen = true

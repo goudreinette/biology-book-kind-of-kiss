@@ -1,17 +1,21 @@
-extends Node3D
+class_name Game extends Node3D
 
-@export var module_vein_straight: PackedScene 
 
-# Global 
+
+# Global / game state
 enum GAME_STATE {
 	OUTFIT_SELECT,
-	PLAYING
+	PLAYING,
+	MINIGAME,
+	GAMEOVER
 }
 
 @export var game_state = GAME_STATE.OUTFIT_SELECT
+@export var current_minigame: bool
 
+@export var gameover = false
 
-# Biomes
+# Biomes and track
 enum BIOME {
 	VEINS, 
 	GRAPHWORLD,
@@ -23,16 +27,40 @@ var current_biome = BIOME.VEINS
 var modules_in_current_biome = 0
 var modules_until_switch = randi_range(5, 10)
 
+@export var module_vein_straight: PackedScene 
+
+
+# Health
+@export var max_health: float = 9
+@export var health: float = 9
+@export var dying_speed: float = 0.25
 
 # Movement
 @export var forward_speed = 20
 @export var forward_speed_menu = 3
 
-var move_speed = 10
+var move_speed = 5
 var velocity = Vector2(0,0)
-var drag = 0.9
+var drag = 0.85
 
 @export var limit_from_center: float = 15.0
+
+
+# Important UI elements
+@onready var healthbar = $LevelPosition/Camera3D/healthbar
+@onready var patient_lost_text = $LevelPosition/Camera3D/PatientLost
+@onready var outfit_select = $LevelPosition/Camera3D/OutfitSelect
+
+# Pickups and obstacles
+@export var pickups_packedscenes: Array[PackedScene] = []
+@export var pickups: Array[Pickup] = []
+@export var pickup_vfx: PackedScene
+
+
+func _ready():
+	healthbar.scale = Vector3(0,0,0)
+	patient_lost_text.scale = Vector3(0,0,0)
+	game_state = GAME_STATE.OUTFIT_SELECT
 
 
 func _process(delta):	
@@ -40,21 +68,87 @@ func _process(delta):
 	if game_state == GAME_STATE.PLAYING:
 		handle_ship_movement(delta)
 		$LevelPosition.translate(Vector3(0,0, -forward_speed * delta))
-		$LevelPosition/Camera3D/OutfitSelect.scale = lerp(Vector3(0.0, 0.0, 0.0), $LevelPosition/Camera3D/OutfitSelect.scale, 0.9)
+		outfit_select.scale = lerp(Vector3(0.0, 0.0, 0.0), outfit_select.scale, 0.9)
 		$LevelPosition/Ship.visible = true
-		
+		update_health(delta)
+		update_pickups()
+	
+	# Outfit select
 	if game_state == GAME_STATE.OUTFIT_SELECT:
-		$LevelPosition/Camera3D/OutfitSelect.scale = lerp(Vector3(1, 1, 1), $LevelPosition/Camera3D/OutfitSelect.scale, 0.9)
+		outfit_select.scale = lerp(Vector3(1, 1, 1), outfit_select.scale, 0.9)
 		$LevelPosition.translate(Vector3(0,0, -forward_speed_menu * delta))
 		$LevelPosition/Ship.visible = false
+		
+	# Gameover
+	if game_state == GAME_STATE.GAMEOVER:
+		pass
+		#$LevelPosition.translate(Vector3(0,0, -forward_speed_menu * delta))
 	
 	lerp_camera()
 	update_track()
 	
+	# Healthbar
+	if game_state == GAME_STATE.PLAYING:
+		healthbar.scale = lerp(Vector3(.9, .9, .9), healthbar.scale, 0.9)
+	else: 
+		healthbar.scale = lerp(Vector3(0, 0, 0), healthbar.scale, 0.9)
 	
 	
+	healthbar.update_health(health)
 	
+	print(game_state)
+	if game_state == GAME_STATE.GAMEOVER:
+		patient_lost_text.scale = lerp(Vector3(1, 1, 1), patient_lost_text.scale, 0.9)
+	else:
+		patient_lost_text.scale = lerp(Vector3(0, 0, 0), patient_lost_text.scale, 0.9)
 	
+
+
+func update_health(delta):
+	# Auto reduce health 
+	health -= delta * dying_speed
+	
+	# Gameover state
+	if health <= 0:
+		game_state = GAME_STATE.GAMEOVER
+		
+		
+func update_pickups():
+	# Spawning
+	if randi_range(0,100) == 0:	
+		var random_pickup_packedscene = pickups_packedscenes.pick_random()
+		var new_pickup: Pickup = random_pickup_packedscene.instantiate()
+		new_pickup.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
+		add_child(new_pickup)
+		
+	# Picking up
+	#for pickup in pickups:
+		#print($LevelPosition.position)
+
+
+
+func _on_ship_area_entered(area):
+	print(area)
+	if area is Pickup:
+		print("its a pickup!")
+		print(area.health_boost)
+		health += area.health_boost
+		health = min(max_health, health)
+		
+		var fx = pickup_vfx.instantiate()
+		fx.global_position = area.global_position
+		fx.color = area.color
+		add_child(fx)
+		$GradientDash/AnimationPlayer.play("flash")
+		$GradientDash.self_modulate = area.color
+		area.queue_free()
+		
+		
+		#if $LevelPosition:
+			#if $LevelPosition.global_position.distance_to(pickup.global_position) < 5:
+				#health += pickup.health_boost
+
+
 func handle_ship_movement(delta):
 	var x = Input.get_axis("ui_left", "ui_right")
 	var y = Input.get_axis("ui_down", "ui_up")
@@ -69,7 +163,7 @@ func handle_ship_movement(delta):
 	# Limit position
 	$LevelPosition/Ship.position.x = clamp($LevelPosition/Ship.position.x, -limit_from_center, limit_from_center)
 	$LevelPosition/Ship.position.y = clamp($LevelPosition/Ship.position.y, -limit_from_center, limit_from_center)
-
+	
 
 
 func lerp_camera():
@@ -97,14 +191,52 @@ func update_track():
 		$Track.add_child(new_module)
 		modules_in_current_biome += 1
 		
+		# Biome switching
 		if modules_in_current_biome == modules_until_switch:
 			current_biome = [ BIOME.VEINS, BIOME.GRAPHWORLD, BIOME.CELL, BIOME.BRAIN ].pick_random()
 
 
-func new_game():
+	if game_state == GAME_STATE.GAMEOVER:
+		for t in $Track.get_children():
+			if not t.playing_die_anim():
+				t.play_die_anim()
+
+
+func new_game(outfit: Outfit):
 	game_state = GAME_STATE.PLAYING
+	var copy: Outfit = outfit.duplicate()
+	$LevelPosition/Ship.add_child(copy)
+	#copy.stop_animation(true)
+	copy.position = Vector3(0,0,0)
+	copy.scale = Vector3(3,3,3)
+	copy.rotation_degrees = Vector3(0,180,0)
+	health = max_health
+	$Start.play()
+	
+
+func take_damage(amount: int):
+	health -= amount
+	if health <= 0:
+		game_state = GAME_STATE.GAMEOVER
+
 
 
 func _input(event):
 	if game_state == GAME_STATE.PLAYING and event.is_action_pressed("ui_cancel"):
 		game_state = GAME_STATE.OUTFIT_SELECT
+		
+	if game_state == GAME_STATE.GAMEOVER and event.is_action_pressed("ui_accept"):
+		restart()
+		
+	if event.is_action_pressed("start minigame"):
+		for t in $Track.get_children():
+			t.play_die_anim()
+	
+	
+func restart():
+	game_state = GAME_STATE.OUTFIT_SELECT
+	
+	for t in $Track.get_children():
+		var tt = t as TrackModule
+		if not tt.playing_die_anim():
+			tt.reset()

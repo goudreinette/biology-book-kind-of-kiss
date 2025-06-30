@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://jdvaeg1k37tf"]
+
+[ext_resource type="PackedScene" uid="uid://csbyy30jmmsn7" path="res://models/ships/minimal.blend" id="1_gy4ya"]
+
+[node name="minimal" instance=ExtResource("1_gy4ya")]
+
+[node name="Plane" parent="." index="0"]
+visible = false

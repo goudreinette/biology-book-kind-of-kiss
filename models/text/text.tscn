@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://hud8t5uc67uh"]
+
+[ext_resource type="PackedScene" uid="uid://xqrp554pv0ef" path="res://models/text.blend" id="1_ba6w1"]
+
+[node name="text" instance=ExtResource("1_ba6w1")]
+
+[node name="ST2_select case" parent="." index="1"]
+visible = false
+
+[node name="ST2_select character_BakedFrames_Anchor" parent="." index="2"]
+visible = false
+
+[node name="ST2_select characterFrozen" parent="ST2_select character_BakedFrames_Anchor" index="0"]
+visible = false

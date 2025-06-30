@@ -33,10 +33,17 @@ func _process(delta):
 	else:
 		$Orb.scale = lerp(orb_initial_scale, $Orb.scale , 0.9)
 		$Orb.position = lerp(orb_initial_position, $Orb.position, .9)
+	
+		
+	#if $"../../../../".game_state 
 
+#func start():?
+	
 
-func stop_animation():
+func stop_animation(keep_chosen):
 	if $Empty/Armature/Skeleton3D:
 		$AnimationPlayer.stop()
 		$Empty/Armature/Skeleton3D.show_rest_only = true
+		
+		#if not keep_chosen:
 		chosen = false

@@ -1,14 +1,18 @@
-[gd_scene load_steps=60 format=3 uid="uid://dtjn8j1wteo3m"]
+[gd_scene load_steps=74 format=3 uid="uid://dtjn8j1wteo3m"]
 
 [ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://modules/game/move_forward.gd" id="1_dxwpq"]
 [ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://modules/game/game.gd" id="1_mhvfb"]
+[ext_resource type="AudioStream" uid="uid://bvcpaeyxf0mq4" path="res://music/soundtrack.wav" id="3_m6kkv"]
 [ext_resource type="PackedScene" uid="uid://cy4w7dt4rfruv" path="res://models/dna/source/DNA.fbx" id="3_u8s88"]
-[ext_resource type="PackedScene" uid="uid://csbyy30jmmsn7" path="res://models/ships/minimal.blend" id="4_5e03w"]
+[ext_resource type="AudioStream" uid="uid://ykqe5tp66u3t" path="res://sounds/start.wav" id="4_3w23r"]
 [ext_resource type="PackedScene" uid="uid://cua81oum7yijw" path="res://models/chromosome-x/chromosome_x.tscn" id="4_dxwpq"]
+[ext_resource type="PackedScene" uid="uid://blvb6usv2xgmj" path="res://pickups/pink_stick.tscn" id="4_kbxsp"]
 [ext_resource type="Environment" uid="uid://5ggkd7q5fh6x" path="res://environments/world_environment.tres" id="4_mhvfb"]
+[ext_resource type="PackedScene" uid="uid://0o50wcpckkvs" path="res://pickups/bol_geel.tscn" id="5_1cqm0"]
 [ext_resource type="PackedScene" uid="uid://dfpocqlko5n00" path="res://models/text/select character.tscn" id="5_mhp6k"]
 [ext_resource type="PackedScene" uid="uid://cjfjpdvfvhluc" path="res://models/glucosemolecule/source/GlucoseMolecule.fbx" id="5_mhvfb"]
 [ext_resource type="Script" uid="uid://dglo1cu2xjpl1" path="res://outfit_select/outfit_select.gd" id="5_vkvnp"]
+[ext_resource type="PackedScene" uid="uid://bgy1al5tpjk4a" path="res://pickups/pickup_vfx.tscn" id="6_1cqm0"]
 [ext_resource type="PackedScene" uid="uid://dvqqvfv4t3hto" path="res://models/stylizeddigestivesystem.blend" id="6_5e03w"]
 [ext_resource type="PackedScene" uid="uid://dur68w0ks2svm" path="res://models/red blood cells/red blood cell.blend" id="6_mhvfb"]
 [ext_resource type="ArrayMesh" uid="uid://c2gk1lr1sxslp" path="res://models/red blood cells/source(1)/Blood Cells.obj" id="7_leid8"]
@@ -36,39 +40,45 @@
 [ext_resource type="PackedScene" uid="uid://daro7h2k7xd66" path="res://outfits/outfit12/outfit12.blend" id="18_4jymc"]
 [ext_resource type="PackedScene" uid="uid://bp22prfiniu31" path="res://models/beads/Biology beads Tyra_GLTF 2/Bolletje 2.5cm (1) 2.glb" id="18_gvtgv"]
 [ext_resource type="PackedScene" uid="uid://7vrdlgr6yeih" path="res://outfits/outfit11/outfit11 animated.blend" id="18_nqk1a"]
-[ext_resource type="PackedScene" uid="uid://ck32avt6vo1mr" path="res://models/text/biologybookkindofkiss.tscn" id="19_0lgry"]
 [ext_resource type="PackedScene" uid="uid://c1cg1hqebaad" path="res://models/stylizedhumanbrain.blend" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/blood/vein_straight.tscn" id="19_u8s88"]
+[ext_resource type="PackedScene" uid="uid://hud8t5uc67uh" path="res://models/text/text.tscn" id="22_j4pfj"]
 [ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="22_o6e4d"]
 [ext_resource type="Texture2D" uid="uid://dgoqaohprlhr6" path="res://sprites/critter.png" id="23_ahnrd"]
 [ext_resource type="AudioStream" uid="uid://bvk48uykxan2v" path="res://sounds/cursor.wav" id="24_e3au1"]
 [ext_resource type="AudioStream" uid="uid://cqh3ckgmpxwlq" path="res://sounds/back.wav" id="24_tn4d4"]
+[ext_resource type="PackedScene" uid="uid://dhdcb3h6ejyb4" path="res://models/text/yellow bg.blend" id="25_asp3n"]
 [ext_resource type="AudioStream" uid="uid://bs0g25l8yroan" path="res://sounds/ok.wav" id="25_m6kkv"]
+[ext_resource type="PackedScene" uid="uid://dy2dpyvkow0wx" path="res://models/ui/healthbar.tscn" id="30_j4pfj"]
+[ext_resource type="PackedScene" uid="uid://c21d4cuw0ffdk" path="res://models/patient lost.blend" id="30_pp76j"]
+[ext_resource type="PackedScene" uid="uid://edhv7iu6mmfc" path="res://minigame/synapse catch balls/synapse_catch_balls.tscn" id="31_pp76j"]
+[ext_resource type="PackedScene" uid="uid://b0i7rs4syt4lj" path="res://pickups/blue_pill.tscn" id="51_0al7v"]
+[ext_resource type="Texture2D" uid="uid://bb717j368iwuv" path="res://pickups/gradient dash.png" id="54_bdex1"]
 
 [sub_resource type="Gradient" id="Gradient_wfn4t"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_o6e4d"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ahnrd"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p8t7p"]
 color_ramp = SubResource("Gradient_wfn4t")
 noise = SubResource("FastNoiseLite_o6e4d")
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_e3au1"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_73kh6"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_emw3s"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x2257"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ahnrd"]
 render_priority = 0
 shader = ExtResource("22_o6e4d")
 shader_parameter/distortionView = 0.00400000019
 shader_parameter/speedView = 0.06499999854712
-shader_parameter/noiseViewX = SubResource("NoiseTexture2D_e3au1")
-shader_parameter/noiseViewY = SubResource("NoiseTexture2D_emw3s")
+shader_parameter/noiseViewX = SubResource("NoiseTexture2D_73kh6")
+shader_parameter/noiseViewY = SubResource("NoiseTexture2D_x2257")
 shader_parameter/tintColor = Color(0.9061753, 0.47841117, 0.5544945, 1)
 shader_parameter/fesnelAmount = 3.20000004768384
 shader_parameter/distortionVertex = 0.11499999742952
 shader_parameter/speedVertex = 0.249999994412
-shader_parameter/noiseVertex = SubResource("NoiseTexture2D_ahnrd")
+shader_parameter/noiseVertex = SubResource("NoiseTexture2D_p8t7p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3au1"]
 transparency = 1
@@ -92,6 +102,9 @@ point_count = 4
 
 [sub_resource type="Gradient" id="Gradient_ahnrd"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kbxsp"]
+radius = 3.0
 
 [sub_resource type="PackedScene" id="PackedScene_mhvfb"]
 _bundled = {
@@ -152,17 +165,65 @@ _bundled = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqjgi"]
 albedo_color = Color(0.8944649, 0.19940257, 0.23925556, 1)
 
-[node name="Game" type="Node3D"]
+[sub_resource type="Animation" id="Animation_2fbej"]
+resource_name = "flash"
+length = 0.4
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bdex1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_np36c"]
+_data = {
+&"RESET": SubResource("Animation_bdex1"),
+&"flash": SubResource("Animation_2fbej")
+}
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("pickups")]
 script = ExtResource("1_mhvfb")
+game_state = 3
 module_vein_straight = ExtResource("19_u8s88")
 limit_from_center = 9.0
+pickups_packedscenes = Array[PackedScene]([ExtResource("51_0al7v"), ExtResource("5_1cqm0"), ExtResource("4_kbxsp")])
+pickups = [null, null, null]
+pickup_vfx = ExtResource("6_1cqm0")
+
+[node name="Soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_m6kkv")
+autoplay = true
+
+[node name="Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3w23r")
 
 [node name="LevelPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 177.73608)
 script = ExtResource("1_dxwpq")
 
 [node name="Camera3D" type="Camera3D" parent="LevelPosition"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.2905579)
 environment = ExtResource("4_mhvfb")
 
 [node name="OutfitSelect" type="Node3D" parent="LevelPosition/Camera3D"]
@@ -275,11 +336,11 @@ wait_time = 2.0
 one_shot = true
 autostart = true
 
-[node name="BiologyBookText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("19_0lgry")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0030082166, 0.30159658, -1.0742188)
+[node name="BiologyBookText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("22_j4pfj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0030082166, 0.3015957, -1.0742188)
 
 [node name="MeshInstance3D4" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("9_wfn4t")]
-transform = Transform3D(3.5, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
+transform = Transform3D(4, 0, 0, 0, 1.5, 0, 0, 0, 1.25, 0, 0, -0.7867813)
 skeleton = NodePath("../../outfit1 animated")
 surface_material_override/0 = SubResource("ShaderMaterial_ahnrd")
 
@@ -301,6 +362,9 @@ initial_velocity_max = 1.0
 scale_amount_curve = SubResource("Curve_ahnrd")
 color_ramp = SubResource("Gradient_ahnrd")
 
+[node name="yellow bg" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("25_asp3n")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0.27087402)
+
 [node name="Back" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("24_tn4d4")
 
@@ -310,8 +374,24 @@ stream = ExtResource("25_m6kkv")
 [node name="Cursor" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("24_e3au1")
 
-[node name="Ship" parent="LevelPosition" instance=ExtResource("4_5e03w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7245426, -19.024673)
+[node name="Minigame Mount" type="Node3D" parent="LevelPosition/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.035, -179.02664)
+visible = false
+
+[node name="SynapseCatchBalls" parent="LevelPosition/Camera3D/Minigame Mount" instance=ExtResource("31_pp76j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 24.763, 177.07072)
+
+[node name="healthbar" parent="LevelPosition/Camera3D" instance=ExtResource("30_j4pfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.728, -3.415)
+
+[node name="PatientLost" parent="LevelPosition/Camera3D" instance=ExtResource("30_pp76j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40810776, -4.7654877)
+
+[node name="Ship" type="Area3D" parent="LevelPosition"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7250004, -10)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LevelPosition/Ship"]
+shape = SubResource("SphereShape3D_kbxsp")
 
 [node name="Track" type="Node3D" parent="."]
 
@@ -367,9 +447,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rqjgi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.583893, 19.739044, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Ui" type="Sprite2D" parent="CanvasLayer"]
-visible = false
 texture_filter = 1
 position = Vector2(286, 489.5)
 scale = Vector2(17.874998, 15.296875)
@@ -401,3 +481,19 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 34.72906, 23.799402, 139.5
 
 [node name="stylizedhumanbrain" parent="." instance=ExtResource("19_pxxsx")]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 56.12015, 35.021603, -0.36409616)
+
+[node name="BluePill" parent="." instance=ExtResource("51_0al7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.199027, 25.956526, 162.62875)
+
+[node name="GradientDash" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(319.5, 240)
+scale = Vector2(1.2519531, 0.9375)
+texture = ExtResource("54_bdex1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GradientDash"]
+libraries = {
+&"": SubResource("AnimationLibrary_np36c")
+}
+
+[connection signal="area_entered" from="LevelPosition/Ship" to="." method="_on_ship_area_entered"]

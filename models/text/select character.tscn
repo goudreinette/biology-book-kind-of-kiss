@@ -4,5 +4,14 @@
 
 [node name="text" instance=ExtResource("1_fvgso")]
 
-[node name="ST2_A Biology Book Kind _BakedFrames_Anchor" parent="." index="1"]
+[node name="Highlighter" parent="." index="0"]
+visible = false
+
+[node name="ST2_select characterFrozen" parent="ST2_select character_BakedFrames_Anchor" index="0"]
+visible = false
+
+[node name="ST2_A Biology Book Kind _BakedFrames_Anchor" parent="." index="3"]
+visible = false
+
+[node name="ST2_A Biology Book Kind Frozen_001" parent="ST2_A Biology Book Kind _BakedFrames_Anchor" index="0"]
 visible = false

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://g4asf2jh2eq6"]
+
+[ext_resource type="PackedScene" uid="uid://t1tt7gi3x6ey" path="res://models/neurotransmitter/neurotransmitter.blend" id="1_xoc1x"]
+[ext_resource type="Script" uid="uid://1aew2o6uhric" path="res://models/neurotransmitter/neurotransmitter.gd" id="2_01a2t"]
+
+[node name="neurotransmitter" instance=ExtResource("1_xoc1x")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+script = ExtResource("2_01a2t")
