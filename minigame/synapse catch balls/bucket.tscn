@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmabldbn5mojf"]
-
-[ext_resource type="PackedScene" uid="uid://cnysvm556tkl0" path="res://minigame/synapse catch balls/bucket.blend" id="1_iyo00"]
-
-[node name="bucket" instance=ExtResource("1_iyo00")]

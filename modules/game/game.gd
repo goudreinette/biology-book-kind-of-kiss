@@ -56,7 +56,34 @@ var drag = 0.85
 @export var pickups: Array[Pickup] = []
 @export var pickup_vfx: PackedScene
 
+@onready var has_joystick = Input.get_connected_joypads().size() > 0
 
+
+# Input correction
+func get_axis_x() -> float:
+	if has_joystick:
+		var x:float = Input.get_joy_axis(0,0) + 0.45
+		if x > 0.1 or x < -0.1:
+			return x
+		else:
+			return 0
+	else:
+		return Input.get_axis("ui_left", "ui_right")
+		
+		
+func get_axis_y() -> float:
+	if has_joystick:
+		var y:float = Input.get_joy_axis(0,1) + 0.4
+		if y > 0.1 or y < -0.1:
+			return y * -1
+		else:
+			return 0
+	else:
+		return Input.get_axis("ui_up", "ui_down")
+		
+		
+		
+# Main
 func _ready():
 	healthbar.scale = Vector3(0,0,0)
 	patient_lost_text.scale = Vector3(0,0,0)
@@ -150,8 +177,8 @@ func _on_ship_area_entered(area):
 
 
 func handle_ship_movement(delta):
-	var x = Input.get_axis("ui_left", "ui_right")
-	var y = Input.get_axis("ui_down", "ui_up")
+	var x = get_axis_x()
+	var y = get_axis_y()
 	
 	velocity.x += x * move_speed * delta
 	velocity.y += y * move_speed * delta
@@ -203,15 +230,16 @@ func update_track():
 
 
 func new_game(outfit: Outfit):
-	game_state = GAME_STATE.PLAYING
-	var copy: Outfit = outfit.duplicate()
-	$LevelPosition/Ship.add_child(copy)
-	#copy.stop_animation(true)
-	copy.position = Vector3(0,0,0)
-	copy.scale = Vector3(3,3,3)
-	copy.rotation_degrees = Vector3(0,180,0)
-	health = max_health
-	$Start.play()
+	if game_state != GAME_STATE.PLAYING:
+		game_state = GAME_STATE.PLAYING
+		var copy: Outfit = outfit.duplicate()
+		$LevelPosition/Ship.add_child(copy)
+		#copy.stop_animation(true)
+		copy.position = Vector3(0,0,0)
+		copy.scale = Vector3(3,3,3)
+		copy.rotation_degrees = Vector3(0,180,0)
+		health = max_health
+		$Start.play()
 	
 
 func take_damage(amount: int):

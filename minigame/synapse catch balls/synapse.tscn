@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://c57ef70m81ibs"]
-
-[ext_resource type="PackedScene" uid="uid://bc8o0xmn4gy6i" path="res://minigame/synapse catch balls/synapse.blend" id="1_83glf"]
-
-[node name="synapse" instance=ExtResource("1_83glf")]

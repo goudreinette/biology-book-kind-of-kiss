@@ -21,12 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://c7wynu5ycek4q" path="res://models/white blood cell/WBC.blend" id="8_8bboj"]
 [ext_resource type="PackedScene" uid="uid://bbarx8uddvqh1" path="res://outfits/outfit2/outfit2 animated.blend" id="9_nqk1a"]
 [ext_resource type="Texture2D" uid="uid://dfsonkyl6fkvm" path="res://ui/ui.png" id="9_q52ks"]
-[ext_resource type="PackedScene" uid="uid://b26n543i7auwm" path="res://outfits/outfit3/outfit3.blend" id="9_ta815"]
 [ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="9_wfn4t"]
 [ext_resource type="PackedScene" uid="uid://ch2p1duhdgr8s" path="res://models/beads/Biology beads Tyra_GLTF 2/blauw pil.glb" id="11_jdpby"]
 [ext_resource type="PackedScene" uid="uid://yym0r8r5dt87" path="res://outfits/outfit4/outfit4 animated.blend" id="11_nqk1a"]
 [ext_resource type="PackedScene" uid="uid://crs70nmmly1xt" path="res://models/beads/Biology beads Tyra_GLTF 2/Bol met pijl.glb" id="12_58yx1"]
-[ext_resource type="PackedScene" uid="uid://dpma5s223pv1m" path="res://outfits/outfit6/outfit6.blend" id="12_281ou"]
 [ext_resource type="PackedScene" uid="uid://4pgx53s8xyt1" path="res://outfits/outfit5/outfit5 animated.blend" id="12_nqk1a"]
 [ext_resource type="PackedScene" uid="uid://c5uebnyvht78v" path="res://models/beads/Biology beads Tyra_GLTF 2/Cry.glb" id="13_hbvmx"]
 [ext_resource type="PackedScene" uid="uid://cmdhxseoy12u" path="res://outfits/outfit7/outfit7.blend" id="13_nrbry"]
@@ -35,13 +33,14 @@
 [ext_resource type="PackedScene" uid="uid://d10cxt66bmxkk" path="res://outfits/outfit9/outfit9.blend" id="15_7tmf6"]
 [ext_resource type="PackedScene" uid="uid://ixvd5jfexvme" path="res://models/beads/Biology beads Tyra_GLTF 2/Pijl groot.glb" id="15_pvdu1"]
 [ext_resource type="PackedScene" uid="uid://db0rjax7owpc4" path="res://models/beads/Biology beads Tyra_GLTF 2/Roze ovaal met stokje.glb" id="16_cf130"]
+[ext_resource type="PackedScene" uid="uid://cb2wet22r6epl" path="res://outfits/outfit3/outfit3 animated.blend" id="17_bdex1"]
 [ext_resource type="PackedScene" uid="uid://bif5a2exr2cw" path="res://outfits/outfit10/outfit10 animated.blend" id="17_nqk1a"]
 [ext_resource type="PackedScene" uid="uid://dkxmltuoxu35p" path="res://models/beads/Biology beads Tyra_GLTF 2/Teal.glb" id="17_posua"]
-[ext_resource type="PackedScene" uid="uid://daro7h2k7xd66" path="res://outfits/outfit12/outfit12.blend" id="18_4jymc"]
 [ext_resource type="PackedScene" uid="uid://bp22prfiniu31" path="res://models/beads/Biology beads Tyra_GLTF 2/Bolletje 2.5cm (1) 2.glb" id="18_gvtgv"]
 [ext_resource type="PackedScene" uid="uid://7vrdlgr6yeih" path="res://outfits/outfit11/outfit11 animated.blend" id="18_nqk1a"]
 [ext_resource type="PackedScene" uid="uid://c1cg1hqebaad" path="res://models/stylizedhumanbrain.blend" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/blood/vein_straight.tscn" id="19_u8s88"]
+[ext_resource type="PackedScene" uid="uid://cdm7v4cvcujem" path="res://outfits/outfit6/outfit6 animated.blend" id="20_bdex1"]
 [ext_resource type="PackedScene" uid="uid://hud8t5uc67uh" path="res://models/text/text.tscn" id="22_j4pfj"]
 [ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="22_o6e4d"]
 [ext_resource type="Texture2D" uid="uid://dgoqaohprlhr6" path="res://sprites/critter.png" id="23_ahnrd"]
@@ -49,9 +48,10 @@
 [ext_resource type="AudioStream" uid="uid://cqh3ckgmpxwlq" path="res://sounds/back.wav" id="24_tn4d4"]
 [ext_resource type="PackedScene" uid="uid://dhdcb3h6ejyb4" path="res://models/text/yellow bg.blend" id="25_asp3n"]
 [ext_resource type="AudioStream" uid="uid://bs0g25l8yroan" path="res://sounds/ok.wav" id="25_m6kkv"]
+[ext_resource type="PackedScene" uid="uid://dxhmmbeiyf6mn" path="res://outfits/outfit12/outfit12 animated.blend" id="26_bdex1"]
 [ext_resource type="PackedScene" uid="uid://dy2dpyvkow0wx" path="res://models/ui/healthbar.tscn" id="30_j4pfj"]
 [ext_resource type="PackedScene" uid="uid://c21d4cuw0ffdk" path="res://models/patient lost.blend" id="30_pp76j"]
-[ext_resource type="PackedScene" uid="uid://edhv7iu6mmfc" path="res://minigame/synapse catch balls/synapse_catch_balls.tscn" id="31_pp76j"]
+[ext_resource type="PackedScene" uid="uid://edhv7iu6mmfc" path="res://minigame/milou synapse catch balls/synapse_catch_balls.tscn" id="31_pp76j"]
 [ext_resource type="PackedScene" uid="uid://b0i7rs4syt4lj" path="res://pickups/blue_pill.tscn" id="51_0al7v"]
 [ext_resource type="Texture2D" uid="uid://bb717j368iwuv" path="res://pickups/gradient dash.png" id="54_bdex1"]
 
@@ -165,6 +165,21 @@ _bundled = {
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqjgi"]
 albedo_color = Color(0.8944649, 0.19940257, 0.23925556, 1)
 
+[sub_resource type="Animation" id="Animation_bdex1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_2fbej"]
 resource_name = "flash"
 length = 0.4
@@ -180,21 +195,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_bdex1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np36c"]
@@ -214,10 +214,12 @@ pickup_vfx = ExtResource("6_1cqm0")
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m6kkv")
+volume_db = 8.0
 autoplay = true
 
 [node name="Start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3w23r")
+volume_db = 8.0
 
 [node name="LevelPosition" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.035, 177.73608)
@@ -251,12 +253,12 @@ script = ExtResource("7_urpib")
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.015859246, 0.04970169, 0)
 skeleton = NodePath("../../outfit1 animated")
 
-[node name="outfit3" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("9_ta815")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -1.1855197, 0)
+[node name="outfit3 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("17_bdex1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -0.7839794, 0)
 script = ExtResource("7_urpib")
 
-[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit3" instance=ExtResource("9_wfn4t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.036670446, 0.07061386, 0)
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit3 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.036670446, -0.7308006, 0)
 skeleton = NodePath("../../outfit1 animated")
 
 [node name="outfit4 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("11_nqk1a")]
@@ -275,12 +277,12 @@ script = ExtResource("7_urpib")
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.0066041946, -0.5345917, 0)
 skeleton = NodePath("../../outfit1 animated")
 
-[node name="outfit6" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("12_281ou")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.714, -2.186167, 0)
+[node name="outfit6 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("20_bdex1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.62952, -1.785923, 0)
 script = ExtResource("7_urpib")
 
-[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit6" instance=ExtResource("9_wfn4t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.004083872, 0.0017623901, 0)
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit6 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.12634575, -0.8146591, 0)
 skeleton = NodePath("../../outfit1 animated")
 
 [node name="outfit7" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("13_nrbry")]
@@ -323,12 +325,12 @@ script = ExtResource("7_urpib")
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.014297247, -0.8327637, 0)
 skeleton = NodePath("../../outfit1 animated")
 
-[node name="outfit12" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("18_4jymc")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -3.1822457, 0)
+[node name="outfit12 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("26_bdex1")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -2.7939339, 0)
 script = ExtResource("7_urpib")
 
-[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit12" instance=ExtResource("9_wfn4t")]
-transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.018633842, -0.015136719, 0)
+[node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit12 animated" instance=ExtResource("9_wfn4t")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.018633842, -0.8988762, 0)
 skeleton = NodePath("../../outfit1 animated")
 
 [node name="Timer" type="Timer" parent="LevelPosition/Camera3D/OutfitSelect"]
@@ -367,12 +369,15 @@ transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0.27087402)
 
 [node name="Back" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("24_tn4d4")
+volume_db = 8.0
 
 [node name="Ok" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("25_m6kkv")
+volume_db = 8.0
 
 [node name="Cursor" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("24_e3au1")
+volume_db = 8.0
 
 [node name="Minigame Mount" type="Node3D" parent="LevelPosition/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -23.035, -179.02664)
@@ -382,7 +387,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 24.763, 177.07072)
 
 [node name="healthbar" parent="LevelPosition/Camera3D" instance=ExtResource("30_j4pfj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 1.728, -3.415)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.8, 1.728, -3.415)
 
 [node name="PatientLost" parent="LevelPosition/Camera3D" instance=ExtResource("30_pp76j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40810776, -4.7654877)

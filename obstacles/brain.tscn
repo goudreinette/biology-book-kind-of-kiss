@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mfkyvyr1r7xh"]
+
+[ext_resource type="Script" uid="uid://dhlx485x4w4em" path="res://obstacles/obstacle.gd" id="1_qscaq"]
+
+[node name="Brain" type="Area3D"]
+script = ExtResource("1_qscaq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]

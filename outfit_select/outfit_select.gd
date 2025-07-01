@@ -40,8 +40,8 @@ func _process(delta):
 		
 		if chose_a_model:
 			#print($Timer.time_left)
-			var x = Input.get_axis("ui_left", "ui_right")
-			var y = Input.get_axis("ui_up", "ui_down")
+			var x = $"../../../".get_axis_x()
+			var y = $"../../../".get_axis_y()
 				
 			if x == 0.0 and $Timer.is_stopped():
 				$Timer.start()

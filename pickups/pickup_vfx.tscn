@@ -20,7 +20,7 @@ point_count = 3
 script = ExtResource("1_uj1cb")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-amount = 16
+amount = 32
 explosiveness = 1.0
 mesh = SubResource("SphereMesh_ipinp")
 spread = 180.0

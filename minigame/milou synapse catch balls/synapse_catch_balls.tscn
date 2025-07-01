@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://edhv7iu6mmfc"]
+
+[ext_resource type="Script" uid="uid://68x74lwbsq3f" path="res://minigame/milou synapse catch balls/synapse_catch_balls.gd" id="1_3n1cq"]
+[ext_resource type="PackedScene" uid="uid://bc8o0xmn4gy6i" path="res://minigame/milou synapse catch balls/synapse.blend" id="2_eka4a"]
+[ext_resource type="PackedScene" uid="uid://g4asf2jh2eq6" path="res://models/neurotransmitter/neurotransmitter.tscn" id="2_v3m1t"]
+[ext_resource type="PackedScene" uid="uid://dmabldbn5mojf" path="res://minigame/milou synapse catch balls/bucket.tscn" id="4_5110h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_v3m1t"]
+sky_top_color = Color(0.617351, 0.353067, 0.459213, 1)
+sky_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
+ground_bottom_color = Color(0.476249, 0.193804, 0.221659, 1)
+ground_horizon_color = Color(0.8339943, 0.6973121, 0.7308123, 1)
+
+[sub_resource type="Sky" id="Sky_5110h"]
+sky_material = SubResource("ProceduralSkyMaterial_v3m1t")
+
+[sub_resource type="Environment" id="Environment_ipdny"]
+background_mode = 2
+sky = SubResource("Sky_5110h")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="SynapseCatchBalls" type="Node3D"]
+script = ExtResource("1_3n1cq")
+neurotransmitter_scenes = Array[PackedScene]([ExtResource("2_v3m1t")])
+spawn_range = 2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ipdny")
+
+[node name="Synapse" parent="." instance=ExtResource("2_eka4a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02958107, 0.26918998, -1)
+
+[node name="Spawnpoint" type="Node3D" parent="Synapse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9701369, -0.4389813)
+
+[node name="Camera3D" type="Camera3D" parent="Synapse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.1872976)
+
+[node name="bucket" parent="." instance=ExtResource("4_5110h")]
+
+[node name="MinigameOverTimer" type="Timer" parent="."]
+wait_time = 15.0
