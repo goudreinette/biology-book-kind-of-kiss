@@ -61,6 +61,12 @@ var drag = 0.85
 @export var obstacles: Array[Obstacle] = []
 @export var bloodvessels: PackedScene
 
+@export var initial_vein_chance = 400
+@export var vein_chance = initial_vein_chance
+
+@export var initial_obstacle_chance = 400
+@export var obstacle_chance = initial_obstacle_chance
+
 # Input correction ------
 @onready var has_joystick = Input.get_connected_joypads().size() > 0
 
@@ -152,6 +158,13 @@ func update_pickups():
 		var new_pickup: Pickup = random_pickup_packedscene.instantiate()
 		new_pickup.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
 		add_child(new_pickup)
+	
+	# Magnet
+	for child in get_children():
+		if child is Pickup:
+			if child.global_position.distance_to($LevelPosition/Ship.global_position) < 7.5:
+				child.global_position = lerp(child.global_position, $LevelPosition/Ship.global_position, 0.1)
+		
 
 
 func update_obstacles():
@@ -162,12 +175,14 @@ func update_obstacles():
 		new_obstacle.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
 		new_obstacle.rotation = Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
 		add_child(new_obstacle)
+		obstacle_chance -= 5
 		
-	if randi_range(0,400) == 0:	
+	if randi_range(0,vein_chance) == 0:	
 		var blood = bloodvessels.instantiate()
 		blood.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center*4, limit_from_center*4),randf_range(-limit_from_center*4, limit_from_center*4), -150)
 		blood.rotation = Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
 		add_child(blood)
+		vein_chance -= 10
 
 	# Picking up
 	#for pickup in pickups:
@@ -222,7 +237,7 @@ func _on_ship_area_entered(area):
 		#fx.color = Color.
 		#add_child(fx)
 		$GradientDash/AnimationPlayer.play("flash")
-		$GradientDash.self_modulate = Color.DARK_RED
+		$GradientDash.self_modulate = Color.RED
 		
 		# Speed
 		forward_speed -= 1
@@ -296,7 +311,10 @@ func update_track():
 
 
 func new_game(outfit: Outfit):
-	if game_state != GAME_STATE.PLAYING:
+	if game_state == GAME_STATE.GAMEOVER:
+		restart()
+		
+	elif game_state != GAME_STATE.PLAYING:
 		game_state = GAME_STATE.PLAYING
 		forward_speed = initial_forward_speed
 		var copy: Outfit = outfit.duplicate()
@@ -307,6 +325,11 @@ func new_game(outfit: Outfit):
 		copy.rotation_degrees = Vector3(0,180,0)
 		health = max_health
 		$Start.play()
+		
+		obstacle_chance = initial_obstacle_chance
+		vein_chance = initial_vein_chance
+	
+	
 	
 
 func take_damage(amount: int):
@@ -331,6 +354,15 @@ func _input(event):
 func restart():
 	game_state = GAME_STATE.OUTFIT_SELECT
 	
+	$LevelPosition/Camera3D/OutfitSelect.chose_a_model = false
+	$LevelPosition/Camera3D/OutfitSelect.back_to_overview()
+	
+	# Reset ship position
+	$LevelPosition/Ship.position.x = 0
+	$LevelPosition/Ship.position.y = 0
+	
+	for child in $LevelPosition/Ship.get_children():
+		child.queue_free()
 	
 	for t in $Track.get_children():
 		var tt = t as TrackModule

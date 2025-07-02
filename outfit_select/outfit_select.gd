@@ -97,6 +97,19 @@ var right_just_pressed = false
 var up_just_pressed = false
 var down_just_pressed = false
 
+
+func back_to_overview():
+	var index = cursor_y * 4 + cursor_x
+	var chosen_outfit : Outfit = $Outfits.get_child(index)
+		
+	chose_a_model = false
+	zoom = Vector3(0,0,0)
+	chosen_outfit.stop_animation(false)
+	$Back.play()
+	for n in $"../../Ship".get_children():
+		n.queue_free()	
+
+
 func _input(event):
 	if title_screen:
 		if event.is_action_pressed("ui_accept"):
@@ -108,12 +121,7 @@ func _input(event):
 				
 		if chose_a_model:
 			if event.is_action_pressed("ui_cancel"):
-				chose_a_model = false
-				zoom = Vector3(0,0,0)
-				chosen_outfit.stop_animation(false)
-				$Back.play()
-				for n in $"../../Ship".get_children():
-					n.queue_free()
+				back_to_overview()
 				#.remove_child()
 				
 			if event.is_action_pressed("ui_accept"):

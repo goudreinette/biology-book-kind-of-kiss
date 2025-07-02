@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dtjn8j1wteo3m"]
+[gd_scene load_steps=82 format=3 uid="uid://dtjn8j1wteo3m"]
 
 [ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://modules/game/move_forward.gd" id="1_dxwpq"]
 [ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://modules/game/game.gd" id="1_mhvfb"]
@@ -57,8 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://dy2dpyvkow0wx" path="res://models/ui/healthbar.tscn" id="30_j4pfj"]
 [ext_resource type="PackedScene" uid="uid://c21d4cuw0ffdk" path="res://models/patient lost.blend" id="30_pp76j"]
 [ext_resource type="PackedScene" uid="uid://edhv7iu6mmfc" path="res://minigame/milou synapse catch balls/synapse_catch_balls.tscn" id="31_pp76j"]
-[ext_resource type="PackedScene" uid="uid://bh1fekngmu8ro" path="res://models/texts/press trigger to start.blend" id="34_73kh6"]
-[ext_resource type="Script" uid="uid://ch71bnpdn7awa" path="res://models/texts/press_trigger_to_start.gd" id="35_x2257"]
+[ext_resource type="PackedScene" uid="uid://c210748s580yy" path="res://ui/press_trigger_to_start.tscn" id="37_3i6g5"]
 [ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/blood/vein_straight.tscn" id="45_g6n3p"]
 [ext_resource type="Texture2D" uid="uid://bb717j368iwuv" path="res://pickups/gradient dash.png" id="54_bdex1"]
 [ext_resource type="PackedScene" uid="uid://jajackdd6neh" path="res://obstacles/esinophil.tscn" id="60_gmvgd"]
@@ -191,8 +190,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2fbej"]
 resource_name = "flash"
-length = 0.5
-step = 0.0333333
+step = 1.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -200,7 +198,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -393,9 +391,8 @@ color_ramp = SubResource("Gradient_ahnrd")
 [node name="yellow bg" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("25_asp3n")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0.27087402)
 
-[node name="press trigger to start" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("34_73kh6")]
+[node name="press trigger to start" parent="LevelPosition/Camera3D/OutfitSelect/BiologyBookText" instance=ExtResource("37_3i6g5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.1217241, 0)
-script = ExtResource("35_x2257")
 
 [node name="Back" type="AudioStreamPlayer" parent="LevelPosition/Camera3D/OutfitSelect"]
 stream = ExtResource("24_tn4d4")
