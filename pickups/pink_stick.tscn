@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://blvb6usv2xgmj"]
 
 [ext_resource type="Script" uid="uid://cov83l3emt14k" path="res://pickups/pickup.gd" id="1_rofgj"]
-[ext_resource type="PackedScene" uid="uid://c35tymltkr2iy" path="res://models/beads/Roze ovaal met stokje.glb" id="2_rofgj"]
+[ext_resource type="PackedScene" uid="uid://dx6pvabb4quu2" path="res://pickups/Roze ovaal met stokje.glb" id="2_uavhn"]
 [ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="3_fbpyb"]
 [ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="4_iubmy"]
 
@@ -41,7 +41,7 @@ radius = 2.5
 script = ExtResource("1_rofgj")
 color = Color(1, 0.6666667, 0.8862745, 1)
 
-[node name="model" parent="." instance=ExtResource("2_rofgj")]
+[node name="model" parent="." instance=ExtResource("2_uavhn")]
 
 [node name="Orb" parent="model" instance=ExtResource("3_fbpyb")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.001206398, -0.050345838, 0)

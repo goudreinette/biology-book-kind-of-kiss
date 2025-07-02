@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxy55e2gj8lke"
+path="res://.godot/imported/Prostate Cancer Cells _ final_anim.obj-2b318ad059e3a350864254f159f8d4a3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prostate Cancer Cells _ final_anim.obj-2b318ad059e3a350864254f159f8d4a3.mesh"]
+
+source_file="res://obstacles/Prostate Cancer Cells _ final_anim.obj"
+dest_files=["res://.godot/imported/Prostate Cancer Cells _ final_anim.obj-2b318ad059e3a350864254f159f8d4a3.mesh", "res://.godot/imported/Prostate Cancer Cells _ final_anim.obj-2b318ad059e3a350864254f159f8d4a3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

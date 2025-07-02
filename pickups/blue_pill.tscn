@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://b0i7rs4syt4lj"]
 
-[ext_resource type="PackedScene" uid="uid://c4ntxim12ak2h" path="res://models/beads/blauw pil.glb" id="1_dnj5b"]
 [ext_resource type="Script" uid="uid://cov83l3emt14k" path="res://pickups/pickup.gd" id="1_ej2vy"]
 [ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="2_08t4j"]
+[ext_resource type="PackedScene" uid="uid://y26v4n8f6crs" path="res://pickups/blauw pil.glb" id="2_ej2vy"]
 [ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="3_ej2vy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ss3m5"]
@@ -41,11 +41,12 @@ radius = 2.5
 script = ExtResource("1_ej2vy")
 color = Color(0.59607846, 0.84705883, 1, 1)
 
-[node name="model" parent="." instance=ExtResource("1_dnj5b")]
+[node name="model" parent="." instance=ExtResource("2_ej2vy")]
 
 [node name="Orb" parent="model" instance=ExtResource("2_08t4j")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -0.001206398, -0.050345838, 0)
 mesh = SubResource("SphereMesh_ss3m5")
+skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_gswoh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

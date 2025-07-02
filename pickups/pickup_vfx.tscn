@@ -9,8 +9,8 @@ albedo_color = Color(0.13725491, 1, 1, 1)
 material = SubResource("StandardMaterial3D_uj1cb")
 radius = 0.1
 height = 0.15
-radial_segments = 10
-rings = 10
+radial_segments = 4
+rings = 4
 
 [sub_resource type="Curve" id="Curve_uj1cb"]
 _data = [Vector2(0.031976745, 0.053730488), 0.0, 0.0, 0, 0, Vector2(0.14825583, 0.9128436), -0.07624885, -0.07624885, 0, 0, Vector2(0.9312016, 0), 0.0, 0.0, 0, 0]
@@ -20,7 +20,7 @@ point_count = 3
 script = ExtResource("1_uj1cb")
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
-amount = 32
+amount = 64
 explosiveness = 1.0
 mesh = SubResource("SphereMesh_ipinp")
 spread = 180.0
