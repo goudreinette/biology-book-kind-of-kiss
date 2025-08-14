@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8baf8jyw4tyn"]
+
+[ext_resource type="FontFile" uid="uid://bt2ow3gpnxng" path="res://ArialCE.ttf" id="1_lqyrc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2kg4"]
+
+[sub_resource type="TextMesh" id="TextMesh_f3xkj"]
+material = SubResource("StandardMaterial3D_e2kg4")
+text = "CASE III"
+font = ExtResource("1_lqyrc")
+
+[node name="CaseText" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("TextMesh_f3xkj")

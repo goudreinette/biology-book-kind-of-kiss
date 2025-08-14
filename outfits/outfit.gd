@@ -1,6 +1,8 @@
 class_name Outfit extends Node3D
 
 
+@export var case_name = "CASE [x]"
+
 @onready var start_pos = position
 @export var blob_offset_y = 0
 

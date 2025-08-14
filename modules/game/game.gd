@@ -70,6 +70,18 @@ var drag = 0.85
 # Input correction ------
 @onready var has_joystick = Input.get_connected_joypads().size() > 0
 
+
+# Leaderboard
+@export var start_time = Time.get_unix_time_from_system() 
+@export var survived_for = 0
+@export var highscore = 0
+
+
+@export var paused = false
+
+# 
+var player_outfit: Node3D = null
+
 func get_axis_x() -> float:
 	if has_joystick:
 		var x:float = Input.get_joy_axis(0,0)# + 0.45
@@ -100,16 +112,42 @@ func _ready():
 	game_state = GAME_STATE.OUTFIT_SELECT
 
 
+var pause_menu_x = 0
+
 func _process(delta):	
+	
+	
 	# Playing
 	if game_state == GAME_STATE.PLAYING:
-		handle_ship_movement(delta)
-		$LevelPosition.translate(Vector3(0,0, -forward_speed * delta))
-		outfit_select.scale = lerp(Vector3(0.0, 0.0, 0.0), outfit_select.scale, 0.9)
 		$LevelPosition/Ship.visible = true
-		update_health(delta)
-		update_pickups()
-		update_obstacles()
+		
+		
+		if paused:
+			var bounce = remap(sin(Time.get_ticks_msec() / 200.0), -1, 1, .7, 1)
+			$LevelPosition/Camera3D/paused.scale = lerp(Vector3(1.0, 1.0, 1.0), $LevelPosition/Camera3D/paused.scale, 0.9)
+			if pause_menu_x == 0:
+				$LevelPosition/Camera3D/paused/continue.scale = lerp(Vector3(bounce, bounce, bounce), $LevelPosition/Camera3D/paused/continue.scale, 0.9)
+			else:
+				$LevelPosition/Camera3D/paused/quit.scale = lerp(Vector3(bounce, bounce, bounce), $LevelPosition/Camera3D/paused/quit.scale, 0.9)
+			
+		else:
+			$LevelPosition/Camera3D/paused.scale = lerp(Vector3(0.0, 0.0, 0.0), $LevelPosition/Camera3D/paused.scale, 0.9)
+			$LevelPosition.translate(Vector3(0,0, -forward_speed * delta))
+			outfit_select.scale = lerp(Vector3(0.0, 0.0, 0.0), outfit_select.scale, 0.9)
+			
+			handle_ship_movement(delta)
+			update_health(delta)
+			update_pickups()
+			update_obstacles()
+			
+			var current_time = Time.get_unix_time_from_system() 
+			$LevelPosition/Camera3D/healthbar/Secondstext.mesh.text =  str(int(current_time - start_time))
+	
+	# Paused reverse
+	if not game_state == GAME_STATE.PLAYING: 
+		$LevelPosition/Camera3D/paused.scale = lerp(Vector3(0, 0, 0), $LevelPosition/Camera3D/paused.scale, 0.9)
+		$GradientDash.modulate = Color.TRANSPARENT
+
 	
 	# Outfit select
 	if game_state == GAME_STATE.OUTFIT_SELECT:
@@ -134,7 +172,7 @@ func _process(delta):
 	
 	healthbar.update_health(health)
 	
-	print(game_state)
+	#print(game_state)
 	if game_state == GAME_STATE.GAMEOVER:
 		patient_lost_text.scale = lerp(Vector3(1, 1, 1), patient_lost_text.scale, 0.9)
 	else:
@@ -149,7 +187,12 @@ func update_health(delta):
 	# Gameover state
 	if health <= 0:
 		game_state = GAME_STATE.GAMEOVER
-		
+		survived_for = int(Time.get_unix_time_from_system() - start_time)
+		if survived_for > highscore:
+			highscore = survived_for
+			
+		$LevelPosition/Camera3D/PatientLost/PatientLivedText.mesh.text = str("patient lived for ", survived_for, " seconds")
+		$LevelPosition/Camera3D/PatientLost/HighscoreText.mesh.text = str("the longest a patient ever lived was ", highscore, " seconds")
 		
 func update_pickups():
 	# Spawning
@@ -174,6 +217,8 @@ func update_obstacles():
 		var new_obstacle = random_obstacle_packedscene.instantiate()
 		new_obstacle.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
 		new_obstacle.rotation = Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
+		var scale = randf_range(0.5, 2.0)
+		new_obstacle.scale = Vector3(scale, scale, scale)
 		add_child(new_obstacle)
 		obstacle_chance -= 5
 		
@@ -181,6 +226,8 @@ func update_obstacles():
 		var blood = bloodvessels.instantiate()
 		blood.position = $LevelPosition.position + Vector3(randf_range(-limit_from_center*4, limit_from_center*4),randf_range(-limit_from_center*4, limit_from_center*4), -150)
 		blood.rotation = Vector3(randf_range(-limit_from_center, limit_from_center),randf_range(-limit_from_center, limit_from_center), -150)
+		var scale = randf_range(0.5, 2.0)
+		blood.scale = Vector3(scale, scale, scale)
 		add_child(blood)
 		vein_chance -= 10
 
@@ -207,9 +254,9 @@ func _on_ship_area_entered(area):
 		$GradientDash.self_modulate = area.color
 		
 		# Speed
-		forward_speed += .2
+		forward_speed += 0.5
 		
-		# Streak
+		# Streakne
 		$StreakTimer.start()
 		streak += 1
 		
@@ -240,7 +287,7 @@ func _on_ship_area_entered(area):
 		$GradientDash.self_modulate = Color.RED
 		
 		# Speed
-		forward_speed -= 1
+		#forward_speed -= 1
 		
 		# SFX
 		#$Pickup2.pitch_scale = 1 + streak / 2.0
@@ -311,18 +358,21 @@ func update_track():
 
 
 func new_game(outfit: Outfit):
+	start_time = Time.get_unix_time_from_system() 
+	
+	
 	if game_state == GAME_STATE.GAMEOVER:
 		restart()
 		
 	elif game_state != GAME_STATE.PLAYING:
 		game_state = GAME_STATE.PLAYING
 		forward_speed = initial_forward_speed
-		var copy: Outfit = outfit.duplicate()
-		$LevelPosition/Ship.add_child(copy)
+		player_outfit = outfit.duplicate()
+		$LevelPosition/Ship/PlayerMount.add_child(player_outfit)
 		#copy.stop_animation(true)
-		copy.position = Vector3(0,0,0)
-		copy.scale = Vector3(3,3,3)
-		copy.rotation_degrees = Vector3(0,180,0)
+		player_outfit.position = Vector3(0,0,0)
+		player_outfit.scale = Vector3(3,3,3)
+		player_outfit.rotation_degrees = Vector3(0,180,0)
 		health = max_health
 		$Start.play()
 		
@@ -339,12 +389,41 @@ func take_damage(amount: int):
 
 
 
+func pause_game():
+	paused = true
+	#$LevelPosition/Camera3D/paused/AnimationPlayer2.play("fadein")
+	$GradientDash/AnimationPlayer.play("pause")
+
+func unpause_game():
+	paused = false
+	#$LevelPosition/Camera3D/paused/AnimationPlayer2.play("fadeout")
+	$GradientDash/AnimationPlayer.play("pause-reverse")
+
 func _input(event):
 	if game_state == GAME_STATE.PLAYING and event.is_action_pressed("ui_cancel"):
-		game_state = GAME_STATE.OUTFIT_SELECT
-		
+		if paused:
+			#game_state = GAME_STATE.OUTFIT_SELECT
+			unpause_game()
+		else:
+			pause_game()
+			
+	if game_state == GAME_STATE.PLAYING and paused:
+		if event.is_action_pressed("ui_accept"):
+			if pause_menu_x == 0:
+				unpause_game()
+			else:
+				restart()
+		if event.is_action_pressed("ui_left"):
+			pause_menu_x -= 1
+			pause_menu_x = pause_menu_x % 2
+		if event.is_action_pressed("ui_right"):
+			pause_menu_x += 1
+			pause_menu_x = pause_menu_x % 2
+			
 	if game_state == GAME_STATE.GAMEOVER and event.is_action_pressed("ui_accept"):
+		unpause_game()
 		restart()
+		
 		
 	if event.is_action_pressed("start minigame"):
 		for t in $Track.get_children():
@@ -353,6 +432,7 @@ func _input(event):
 	
 func restart():
 	game_state = GAME_STATE.OUTFIT_SELECT
+	paused = false
 	
 	$LevelPosition/Camera3D/OutfitSelect.chose_a_model = false
 	$LevelPosition/Camera3D/OutfitSelect.back_to_overview()
@@ -361,8 +441,13 @@ func restart():
 	$LevelPosition/Ship.position.x = 0
 	$LevelPosition/Ship.position.y = 0
 	
-	for child in $LevelPosition/Ship.get_children():
-		child.queue_free()
+	player_outfit.queue_free()
+
+	for n in $LevelPosition/Ship/PlayerMount.get_children():
+		n.queue_free()	
+	#for child in $LevelPosition/Ship.get_children():
+		#if not child is CollisionShape3D:
+			#child.queue_free()
 	
 	for t in $Track.get_children():
 		var tt = t as TrackModule

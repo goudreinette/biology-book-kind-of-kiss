@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dtjn8j1wteo3m"]
+[gd_scene load_steps=98 format=3 uid="uid://dtjn8j1wteo3m"]
 
 [ext_resource type="Script" uid="uid://cvs5bxsy5fnlb" path="res://modules/game/move_forward.gd" id="1_dxwpq"]
 [ext_resource type="Script" uid="uid://dfogjo7grg6u2" path="res://modules/game/game.gd" id="1_mhvfb"]
@@ -23,10 +23,11 @@
 [ext_resource type="PackedScene" uid="uid://dk3avqnicfj8g" path="res://obstacles/redbloodcell_3.tscn" id="8_3i6g5"]
 [ext_resource type="PackedScene" uid="uid://c7wynu5ycek4q" path="res://models/white blood cell/WBC.blend" id="8_8bboj"]
 [ext_resource type="AudioStream" uid="uid://m1hmjqpy1cd4" path="res://sounds/pickup.wav" id="9_2fbej"]
+[ext_resource type="PackedScene" uid="uid://b8w4hip8oibte" path="res://obstacles/animal_cell.tscn" id="9_niclo"]
 [ext_resource type="PackedScene" uid="uid://bbarx8uddvqh1" path="res://outfits/outfit2/outfit2 animated.blend" id="9_nqk1a"]
-[ext_resource type="Texture2D" uid="uid://dfsonkyl6fkvm" path="res://ui/ui.png" id="9_q52ks"]
 [ext_resource type="PackedScene" uid="uid://4deeqkflk0cg" path="res://shaders/distortion bubble.tscn" id="9_wfn4t"]
 [ext_resource type="AudioStream" uid="uid://cieye6uv0v4l1" path="res://sounds/pickup_2.wav" id="10_np36c"]
+[ext_resource type="PackedScene" uid="uid://b5i6naxtfheiv" path="res://models/red blood cells/red_blood_cell.tscn" id="10_qcmib"]
 [ext_resource type="PackedScene" uid="uid://ch2p1duhdgr8s" path="res://models/beads/Biology beads Tyra_GLTF 2/blauw pil.glb" id="11_jdpby"]
 [ext_resource type="PackedScene" uid="uid://yym0r8r5dt87" path="res://outfits/outfit4/outfit4 animated.blend" id="11_nqk1a"]
 [ext_resource type="PackedScene" uid="uid://crs70nmmly1xt" path="res://models/beads/Biology beads Tyra_GLTF 2/Bol met pijl.glb" id="12_58yx1"]
@@ -44,6 +45,7 @@
 [ext_resource type="PackedScene" uid="uid://c1cg1hqebaad" path="res://models/stylizedhumanbrain.blend" id="19_pxxsx"]
 [ext_resource type="PackedScene" uid="uid://cdm7v4cvcujem" path="res://outfits/outfit6/outfit6 animated.blend" id="20_bdex1"]
 [ext_resource type="PackedScene" uid="uid://c3kg56vca4276" path="res://outfits/outfit7/outfit7 animated.blend" id="21_bdex1"]
+[ext_resource type="FontFile" uid="uid://bt2ow3gpnxng" path="res://ArialCE.ttf" id="21_g6n3p"]
 [ext_resource type="PackedScene" uid="uid://hud8t5uc67uh" path="res://models/text/text.tscn" id="22_j4pfj"]
 [ext_resource type="Shader" uid="uid://bdyx3hxgbw2po" path="res://shaders/distortion_bubble.gdshader" id="22_o6e4d"]
 [ext_resource type="Texture2D" uid="uid://dgoqaohprlhr6" path="res://sprites/critter.png" id="23_ahnrd"]
@@ -59,17 +61,29 @@
 [ext_resource type="PackedScene" uid="uid://edhv7iu6mmfc" path="res://minigame/milou synapse catch balls/synapse_catch_balls.tscn" id="31_pp76j"]
 [ext_resource type="PackedScene" uid="uid://c210748s580yy" path="res://ui/press_trigger_to_start.tscn" id="37_3i6g5"]
 [ext_resource type="PackedScene" uid="uid://cjwse2ypwa15c" path="res://modules/blood/vein_straight.tscn" id="45_g6n3p"]
+[ext_resource type="Texture2D" uid="uid://deug5um846g2k" path="res://models/textures/Untitled 8.png" id="46_vttxi"]
+[ext_resource type="PackedScene" uid="uid://b75ba0kx4574m" path="res://models/texts/paused.tscn" id="48_vttxi"]
 [ext_resource type="Texture2D" uid="uid://bb717j368iwuv" path="res://pickups/gradient dash.png" id="54_bdex1"]
 [ext_resource type="PackedScene" uid="uid://jajackdd6neh" path="res://obstacles/esinophil.tscn" id="60_gmvgd"]
 [ext_resource type="PackedScene" uid="uid://b0i7rs4syt4lj" path="res://pickups/blue_pill.tscn" id="63_vttxi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e2kg4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_vttxi"]
+material = SubResource("StandardMaterial3D_e2kg4")
+text = "CASE III"
+font = ExtResource("21_g6n3p")
+font_size = 54
+horizontal_alignment = 0
 
 [sub_resource type="Gradient" id="Gradient_wfn4t"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_o6e4d"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p8t7p"]
-color_ramp = SubResource("Gradient_wfn4t")
 noise = SubResource("FastNoiseLite_o6e4d")
+color_ramp = SubResource("Gradient_wfn4t")
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_73kh6"]
 
@@ -111,8 +125,70 @@ point_count = 4
 [sub_resource type="Gradient" id="Gradient_ahnrd"]
 colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6n3p"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_a3560"]
+material = SubResource("StandardMaterial3D_g6n3p")
+text = "60s"
+font = ExtResource("21_g6n3p")
+font_size = 32
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4e2xg"]
+resource_name = "Untitled 8"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("46_vttxi")
+roughness = 0.5
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wmcmf"]
+_surfaces = [{
+"aabb": AABB(-0.23567708, 0, -0.5, 0.47135416, 1e-05, 1),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "Untitled 8",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a3560"]
+resource_name = "text_Untitled 8"
+_surfaces = [{
+"aabb": AABB(-0.23567708, 0, -0.5, 0.47135416, 1e-05, 1),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_4e2xg"),
+"name": "Untitled 8",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wmcmf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vttxi"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_473xj"]
+material = SubResource("StandardMaterial3D_vttxi")
+text = "patient lived x seconds"
+font_size = 20
+
+[sub_resource type="TextMesh" id="TextMesh_kih0p"]
+material = SubResource("StandardMaterial3D_vttxi")
+text = "patient lived x seconds"
+font_size = 20
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_kbxsp"]
-radius = 3.0
+radius = 2.5
 
 [sub_resource type="PackedScene" id="PackedScene_mhvfb"]
 _bundled = {
@@ -187,6 +263,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_2fbej"]
 resource_name = "flash"
@@ -204,10 +292,56 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_g6n3p"]
+resource_name = "pause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.52156866)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5764706, 0.17254902, 0.21176471, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vttxi"]
+resource_name = "pause-reverse"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.52156866), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_np36c"]
 _data = {
 &"RESET": SubResource("Animation_bdex1"),
-&"flash": SubResource("Animation_2fbej")
+&"flash": SubResource("Animation_2fbej"),
+&"pause": SubResource("Animation_g6n3p"),
+&"pause-reverse": SubResource("Animation_vttxi")
 }
 
 [node name="Game" type="Node3D" node_paths=PackedStringArray("pickups")]
@@ -218,29 +352,29 @@ limit_from_center = 9.0
 pickups_packedscenes = Array[PackedScene]([ExtResource("63_vttxi"), ExtResource("5_1cqm0"), ExtResource("4_kbxsp")])
 pickups = [null, null, null]
 pickup_vfx = ExtResource("6_1cqm0")
-obstacles_packedscenes = Array[PackedScene]([ExtResource("7_d7lq1"), ExtResource("8_3i6g5")])
+obstacles_packedscenes = Array[PackedScene]([ExtResource("7_d7lq1"), ExtResource("8_3i6g5"), ExtResource("9_niclo"), ExtResource("10_qcmib")])
 bloodvessels = ExtResource("6_73kh6")
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_m6kkv")
-volume_db = 8.0
+volume_db = 12.0
 autoplay = true
 
 [node name="Start" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_3w23r")
-volume_db = 8.0
+volume_db = 4.0
 
 [node name="Pickup" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_2fbej")
-volume_db = 8.0
+volume_db = 4.0
 
 [node name="Pickup2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_np36c")
-volume_db = 8.0
+volume_db = 4.0
 
 [node name="Damage" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_niclo")
-volume_db = 8.0
+volume_db = 4.0
 
 [node name="StreakTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -257,7 +391,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.3148346)
 script = ExtResource("5_vkvnp")
 
 [node name="SelectCharacterText" parent="LevelPosition/Camera3D/OutfitSelect" instance=ExtResource("5_mhp6k")]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.75, 0)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.0038413405, 1.75, 1.5258789e-05)
+
+[node name="CaseName" type="MeshInstance3D" parent="LevelPosition/Camera3D/OutfitSelect/SelectCharacterText"]
+transform = Transform3D(1.3333334, 0, 0, 0, 1.3333334, 0, 0, 0, 1.3333334, -4.545, -6.568, -1.625)
+mesh = SubResource("TextMesh_vttxi")
+skeleton = NodePath("../../../../Ship/CollisionShape3D")
 
 [node name="Outfits" type="Node3D" parent="LevelPosition/Camera3D/OutfitSelect"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
@@ -265,6 +404,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7605062, 0)
 [node name="outfit1 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("7_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.7646562, -0.6730652, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE III"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit1 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.001206398, -0.9111328, 0)
@@ -272,6 +412,7 @@ transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.001206398, -0.911
 [node name="outfit2 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("9_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.6393028, -1.1788158, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE II"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit2 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.015859246, 0.04970169, 0)
@@ -280,6 +421,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit3 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("17_bdex1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.53354144, -0.7839794, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE IV"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit3 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.036670446, -0.7308006, 0)
@@ -288,6 +430,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit4 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("11_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6575552, -0.7214737, 0.0050964355)
 script = ExtResource("7_urpib")
+case_name = "CASE V"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit4 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.021300316, -0.8157692, -0.010192871)
@@ -296,6 +439,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit5 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("12_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.7907025, -1.7482204, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE VI"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit5 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.0066041946, -0.81804276, 0)
@@ -304,6 +448,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit6 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("20_bdex1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.62952, -1.785923, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE X"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit6 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.12634575, -0.8146591, 0)
@@ -312,6 +457,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit7 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("21_bdex1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -1.8421059, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE XI"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit7 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.015575647, -0.6784744, 0)
@@ -320,6 +466,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit8 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("25_x2257")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6286068, -1.782217, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE VIIII"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit8 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.015077829, -0.79587173, 0)
@@ -328,6 +475,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit9 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("26_p8t7p")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8342713, -2.8383522, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE XII"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit9 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.043952942, -0.7423439, 0)
@@ -336,6 +484,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit10 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("17_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.70604753, -2.7666168, 0.006591797)
 script = ExtResource("7_urpib")
+case_name = "CASE VII"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit10 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.1711452, -0.8851204, -0.013183594)
@@ -344,6 +493,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit11 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("18_nqk1a")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.52, -2.8219604, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE VIII"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit11 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, -0.014297247, -0.8327637, 0)
@@ -352,6 +502,7 @@ skeleton = NodePath("../../outfit1 animated")
 [node name="outfit12 animated" parent="LevelPosition/Camera3D/OutfitSelect/Outfits" instance=ExtResource("26_bdex1")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.6038715, -2.7939339, 0)
 script = ExtResource("7_urpib")
+case_name = "CASE I"
 
 [node name="Orb" parent="LevelPosition/Camera3D/OutfitSelect/Outfits/outfit12 animated" instance=ExtResource("9_wfn4t")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0.018633842, -0.8988762, 0)
@@ -416,14 +567,40 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 24.763, 177.07072)
 [node name="healthbar" parent="LevelPosition/Camera3D" instance=ExtResource("30_j4pfj")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.8, 1.728, -3.415)
 
+[node name="Secondstext" type="MeshInstance3D" parent="LevelPosition/Camera3D/healthbar"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.563, 0)
+mesh = SubResource("TextMesh_a3560")
+
+[node name="Untitled 8" type="MeshInstance3D" parent="LevelPosition/Camera3D/healthbar/Secondstext"]
+transform = Transform3D(3.0946575e-07, 0, -1.1029227, -1.5352333, 0.15552066, -2.0742968e-07, 0.41136464, 0.5804111, 5.5580596e-08, 0.061, 0.064, -0.117)
+mesh = SubResource("ArrayMesh_a3560")
+skeleton = NodePath("")
+metadata/extras = {
+"st2": {}
+}
+
 [node name="PatientLost" parent="LevelPosition/Camera3D" instance=ExtResource("30_pp76j")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40810776, -4.7654877)
+
+[node name="PatientLivedText" type="MeshInstance3D" parent="LevelPosition/Camera3D/PatientLost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1894779, 0.84173584)
+mesh = SubResource("TextMesh_473xj")
+
+[node name="HighscoreText" type="MeshInstance3D" parent="LevelPosition/Camera3D/PatientLost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0017823279, -1.8904839, 0.8355713)
+mesh = SubResource("TextMesh_kih0p")
+skeleton = NodePath("../PatientLivedText")
+
+[node name="paused" parent="LevelPosition/Camera3D" instance=ExtResource("48_vttxi")]
+transform = Transform3D(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -4.0224457)
 
 [node name="Ship" type="Area3D" parent="LevelPosition"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.7250004, -10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LevelPosition/Ship"]
 shape = SubResource("SphereShape3D_kbxsp")
+
+[node name="PlayerMount" type="Node3D" parent="LevelPosition/Ship"]
 
 [node name="Track" type="Node3D" parent="."]
 
@@ -478,15 +655,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_rqjgi")
 [node name="WBC" parent="." instance=ExtResource("8_8bboj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.583893, 19.739044, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="Ui" type="Sprite2D" parent="CanvasLayer"]
-texture_filter = 1
-position = Vector2(286, 489.5)
-scale = Vector2(17.874998, 15.296875)
-texture = ExtResource("9_q52ks")
-
 [node name="blauw pil" parent="." instance=ExtResource("11_jdpby")]
 transform = Transform3D(10, 0, 0, 0, 6.4067273, -7.678141, 0, 7.678141, 6.4067273, 36.68082, 28.0602, 143.35915)
 
@@ -529,6 +697,9 @@ libraries = {
 }
 
 [node name="eosinunwrap" parent="." instance=ExtResource("60_gmvgd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.669796, 0, 157.80513)
+
+[node name="animal cell" parent="." instance=ExtResource("9_niclo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.669796, 0, 157.80513)
 
 [connection signal="timeout" from="StreakTimer" to="." method="_on_streak_timer_timeout"]

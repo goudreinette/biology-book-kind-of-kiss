@@ -27,15 +27,18 @@ func _process(delta):
 	var index = cursor_y * 4 + cursor_x
 	var chosen_outfit : Outfit = $Outfits.get_child(index)
 	
+	$SelectCharacterText/CaseName.mesh.text = chosen_outfit.case_name
+	
 	if title_screen:
 		$BiologyBookText.scale = lerp(Vector3(1.5, 1.5, 1.5), $BiologyBookText.scale, 0.9)
 		$SelectCharacterText.scale = lerp(Vector3(0, 0, 0), $SelectCharacterText.scale, 0.9)
 		$Outfits.scale = lerp(Vector3(0, 0, 0), $Outfits.scale, 0.9)
+		$SelectCharacterText/CaseName.scale = Vector3(0, 0, 0)
 	else:
 		$BiologyBookText.scale = lerp(Vector3(0, 0, 0), $BiologyBookText.scale, 0.9)
 		$Outfits.scale = lerp(Vector3(1, 1, 1), $Outfits.scale, 0.9)
 		$SelectCharacterText.scale = lerp(Vector3(1, 1, 1), $SelectCharacterText.scale, 0.9)
-
+		$SelectCharacterText/CaseName.scale = Vector3(1, 1, 1)
 		
 		
 		if chose_a_model:
@@ -106,8 +109,7 @@ func back_to_overview():
 	zoom = Vector3(0,0,0)
 	chosen_outfit.stop_animation(false)
 	$Back.play()
-	for n in $"../../Ship".get_children():
-		n.queue_free()	
+	
 
 
 func _input(event):
@@ -125,7 +127,9 @@ func _input(event):
 				#.remove_child()
 				
 			if event.is_action_pressed("ui_accept"):
+				#chosen_outfit.stop_animation(false)
 				$"../../../".new_game(chosen_outfit)
+				
 		else:
 			if event.is_action_pressed("ui_cancel"):
 				title_screen = true
